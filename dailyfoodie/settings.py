@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['dailyfoodieblog.herokuapp.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'blogapp.apps.BlogappConfig',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
