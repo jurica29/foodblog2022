@@ -1,3 +1,5 @@
+from django.http.response import HttpResponse
+from django.http import HttpResponse
 from django.shortcuts import render
 
 from blogapp.models import Post
@@ -9,3 +11,10 @@ def frontpage(request):
 
 def about(request):
     return render(request, 'blog/about.html')
+
+def robots_txt(request):
+    text = [
+        "User-Agent: *",
+        "Disallow: /admin/",
+    ]
+    return HttpResponse("\n".join(text), content_type="text/plain")
