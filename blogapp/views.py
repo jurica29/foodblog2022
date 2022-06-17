@@ -26,3 +26,10 @@ def category(request, slug):
     posts = category.posts.filter(status=Post.ACTIVE)
 
     return render(request, 'blogapp/category.html', {'category': category, 'posts': posts})
+
+def search(request):
+    query = request.GET.get('query','')
+
+    posts = Post.objects.filter(title__incontains=query)
+
+    return render(request, 'blogapp/search.html', {'posts': posts, 'query': query})
