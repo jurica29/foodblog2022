@@ -1,7 +1,7 @@
-<!-- Home page -->
+<!-- Categories page -->
 {% extends 'blog/base.html' %}
 
-{% block title %} Home | {% endblock %}
+{% block title %}{{ category.title }} | {% endblock %}
 
 {% block content %}
     <section class="hero">
@@ -10,7 +10,7 @@
                 <section class="section">
                     <div class="columns">
                         <div class="column is-8 is-offset-2">
-                            {% for post in posts %}
+                            {% for post in category.posts.all %}
                                 <div class="content is-medium">
                                     <a href="{% url 'post_detail' post.category.slug post.slug %}">
                                         <h2 class="subtitle is-4">{{ post.created_at|date:'d-m-Y H:i' }}</h2>
