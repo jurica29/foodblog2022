@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ['dailyfoodieblog.herokuapp.com', 'localhost']
 INSTALLED_APPS = [
     'blogapp.apps.BlogappConfig',
     'blog.apps.BlogConfig',
+    'register.apps.RegisterConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'cloudinary',
 ]
 
@@ -131,6 +133,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
