@@ -8,6 +8,8 @@
     <title>{% block title %}{% endblock %}Daily Foodie</title>
 
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="static/style.css">
       <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/c7dbda0798.js" crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/6.1.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -29,6 +31,20 @@
                 <a class="navbar-item" href="/">
                     <strong>DAILY FOODIE | Daily posts for all foodies </strong>
                 </a>
+        <div id="userlogin">
+          <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+            <span class="navbar-text">Logged in as {{user.username}} | </span>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'log_user_out' %}">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
                 <span class="navbar-burger burger" data-target="navbarMenu">
                     <span><a href="/" class="navbar-item is-active is-size-5 has-text-weight-semibold"></a></span>
                     <span></span>
@@ -54,9 +70,6 @@
                     </a>
                     <a href="{% url 'register' %}" class="navbar-item is-size-5 has-text-weight-semibold">
                         Register
-                    </a>
-                    <a href="{% url 'login' %}" class="navbar-item is-size-5 has-text-weight-semibold">
-                        Login
                     </a>
                     <a href="{% url 'about' %}" class="navbar-item is-size-5 has-text-weight-semibold">
                         About

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render, reverse
 from .forms import RegisterForm
 from django.contrib.auth import login, logout, authenticate
 
@@ -9,7 +9,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('/frontpage')
+            return redirect(reverse('frontpage'))
     else:
         form = RegisterForm()
 
@@ -17,3 +17,8 @@ def register(request):
 
 def sign_up(request):
     return render(request, 'registration/login.html', {})
+
+def log_out(request):
+    logout(request)
+    return render(request, 'registration/logout.html', {})
+    

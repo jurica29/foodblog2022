@@ -29,7 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', about, name='about'),
     path('registration/', include('registration.urls')),
-    path('', include('blogapp.urls')),
+    path('blogapp/', include('blogapp.urls')),
     path('', include("django.contrib.auth.urls")),
     path('', frontpage, name='frontpage'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
