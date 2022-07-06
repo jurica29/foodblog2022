@@ -18,12 +18,8 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from django.contrib import admin
 from django.urls import path, include
-from register import views as viewz
-
-from .sitemaps import CategorySitemap, PostSitemap
-
 from blog.views import frontpage, about, robots_txt
-
+from .sitemaps import CategorySitemap, PostSitemap
 
 sitemaps = {'category': CategorySitemap, 'post': PostSitemap}
 
@@ -32,7 +28,8 @@ urlpatterns = [
     path('robots.txt', robots_txt, name='robots_txt'),
     path('admin/', admin.site.urls),
     path('about/', about, name='about'),
-    path('register/',viewz.register, name="register"),
+    path('registration/', include('registration.urls')),
     path('', include('blogapp.urls')),
+    path('', include("django.contrib.auth.urls")),
     path('', frontpage, name='frontpage'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
