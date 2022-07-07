@@ -11,6 +11,14 @@ body {
     align-items: center;
 }
 
+#blogcategories {
+    display:inline;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+
 #introduction {
     display:block;
     text-align: center;
@@ -22,6 +30,22 @@ body {
 p {
     color: black;
 }
+
+#categorypage {
+    display:block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 40px;
+}
+
+#post {
+    margin-top: -6em;
+}
+
+hr {
+    border-top: 1px solid grey;
+  }
 
 .footer {
     background-color: #E3E3E3;
