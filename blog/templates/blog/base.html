@@ -45,10 +45,10 @@
             {% endif %}
           </ul>
         </div>
-                <span class="navbar-burger burger" data-target="navbarMenu">
-                    <span><a href="/" class="navbar-item is-active is-size-5 has-text-weight-semibold"></a></span>
-                    <span></span>
-                    <span></span>
+                <span class="navbar-burger burger"  data-target="navbarMenu">
+                    <span><a href="/" class="navbar-item is-active is-size-5 has-text-weight-semibold"></a>Home</span>
+                    <span><a href="{% url 'register' %}" class="navbar-item is-size-5 has-text-weight-semibold"></a>Register</span>
+                    <span><a href="{% url 'about' %}" class="navbar-item is-size-5 has-text-weight-semibold"></a>Contact</span>
                 </span>
             </div>
 
