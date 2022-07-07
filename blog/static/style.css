@@ -1,4 +1,9 @@
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     background-color: #F6F6F8;
 }
 
@@ -27,6 +32,13 @@ body {
     font-size: 20px;
 }
 
+
+#loginform, #logoutform, #registerform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 p {
     color: black;
 }
@@ -49,4 +61,5 @@ hr {
 
 .footer {
     background-color: #E3E3E3;
+    margin-top:auto;
 }
