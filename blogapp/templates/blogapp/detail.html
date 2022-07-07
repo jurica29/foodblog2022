@@ -24,13 +24,13 @@
 
                                 <hr>
 
-                                <h2 class="subtitle is-4">Comments</h2>
+                                <h2 class="subtitle is-4">Leave a comment:</h2>
 
                                 <form method="post" class="mb-6">
                                     {% csrf_token %}
 
                                     {{ form.as_p }}
-
+                                    {% if user.is_authenticated %}
                                     <div class="field">
                                         <div class="control">
                                             <button class="button is-success">Submit comment</button>
@@ -45,7 +45,12 @@
                                         </div>
                                     </article>
                                 {% endfor %}
+                                    {% else %}
+                                <p>You can't see or leave comments if you are not registered user. 
+                                    Don't have an account? Create one <a href="{% url 'register' %}">Here</a>!</p>
+                                <p>You already have an account? Login <a href="/login">Here</a>!</p>
                             </div>
+                                    {% endif %}
                    </div>
                </div>
            </section>
