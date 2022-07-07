@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}Daily Foodie</title>
 
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css">
-    {% load static %}
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="{% static '/style.css' %}"/>
       <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/c7dbda0798.js" crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/6.1.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -72,7 +72,7 @@
                         Register
                     </a>
                     <a href="{% url 'about' %}" class="navbar-item is-size-5 has-text-weight-semibold">
-                        About
+                        Contact
                     </a>
                 </div>
             </div>
