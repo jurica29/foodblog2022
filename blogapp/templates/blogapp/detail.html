@@ -4,8 +4,7 @@
 {% block title %} {{ post.title }} | {% endblock %}
 
 {% block content %}
-<p id="categorypage"><a href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a></small></p>
-<hr>
+<a id="detailpage" href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a>
 <section id="post" class="hero">
     <div class="hero-body">
         <div class="container">

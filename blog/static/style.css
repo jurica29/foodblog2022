@@ -82,6 +82,16 @@ nav.navbar {
 	font-size:50px;
 }
 
+/* Hovering color for login button */
+a.nav-link:hover {
+    color: goldenrod;
+}
+
+/* Hovering color for login button */
+a.navbar-item:hover {
+    color: goldenrod;
+}
+
 /* Style for the links to two main categories below the page title */
 a.category1, a.category2 {
     color: grey;
@@ -105,13 +115,16 @@ p {
     color: black;
 }
 
-/* Style for the title text on category page */
-#categorypage {
+/* Style for the title text on detail page */
+#detailpage {
     display:block;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    font-size: 40px;
+    margin-bottom: 1em;
+    color:grey;
+	text-shadow:2px 2px 2px grey;
+	font-size:50px;
 }
 
 /* Style for post position */
