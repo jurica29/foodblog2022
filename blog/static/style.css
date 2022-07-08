@@ -45,7 +45,7 @@ nav.navbar {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06) !important;
 }
 
-/* corrections for the position of login button in the upper left corner */
+/* Corrections for the position of login button in the upper left corner */
 #userlogin {
     display: flex;
     align-items: center;
@@ -82,6 +82,17 @@ nav.navbar {
 	font-size:50px;
 }
 
+/* Style for the links to two main categories below the page title */
+a.category1, a.category2 {
+    color: grey;
+    text-shadow:1px 0px 0px grey;
+  }
+
+  a.category1:hover,a.category2:hover {
+    color: goldenrod;
+  }
+
+
 /* Style for login, logout and register forms */
 #loginform, #logoutform, #registerform {
     display: flex;
@@ -117,4 +128,8 @@ hr {
 .footer {
     background-color: #E3E3E3;
     margin-top:auto;
+}
+
+.footer :hover {
+    color: goldenrod;
 }
