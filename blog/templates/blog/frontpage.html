@@ -1,12 +1,15 @@
 <!-- Home page -->
+<!-- Below code extends this html file across other templates -->
 {% extends 'blog/base.html' %}
 
 {% block title %} Home | {% endblock %}
 
 {% block content %}
+<!-- Blog title -->
     <div id="introduction" class="intro my-1">
        <h1 class="text-center">Daily Foodie</h1>
     </div>
+    <!-- Categories names displayed below title -->
     <div id="blogcategories">
         <i class="fas fa-utensils"></i>
         <a href="/blogapp/recipes/" class="category1">Recipes</a>
@@ -14,6 +17,7 @@
         <i class="fas fa-globe-europe"></i>
         <a href="/blogapp/FoodAroundtheWorld/"class="category2">Food Around the World</a>
     </div>
+    <!-- Main section used for displaying posts and images generated with django framework -->
     <section id="mainbody" class="hero">
         <div class="hero-body">
             <div class="container">

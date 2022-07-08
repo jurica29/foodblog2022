@@ -22,6 +22,7 @@ from django.urls import path, include
 from blog.views import frontpage, about, robots_txt
 from .sitemaps import CategorySitemap, PostSitemap
 
+# Sitemaps is used to provide information about everything on the website
 sitemaps = {'category': CategorySitemap, 'post': PostSitemap}
 
 urlpatterns = [
