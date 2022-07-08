@@ -1,3 +1,4 @@
+ /* Basic general styling for the blog */
 body {
     display: flex;
     flex-direction: column;
@@ -7,14 +8,7 @@ body {
     background-color: #F6F6F8;
 }
 
-#introduction {
-    -moz-box-shadow:    inset 0 0 9px grey;
-    -webkit-box-shadow: inset 0 0 9px grey;
-    box-shadow:         inset 0 0 9px grey;
-    width: 6em;
-    border-radius: 25px;
-}
-
+ /* style for the horizontal lines across various pages */
 hr.hrline {
     border-top: 4px solid grey;
     width: 2em;
@@ -31,6 +25,7 @@ hr.registerhr {
     margin: auto;
   }
 
+  /* style for blog categories displayed on the home page below blog title */
 #blogcategories {
     display:inline-flexbox;
     text-align: center;
@@ -40,7 +35,7 @@ hr.registerhr {
     text-align: center;
 }
 
-
+/* navbar style */
 .navbar {
     background-color: #E3E3E3;
 }
@@ -50,11 +45,13 @@ nav.navbar {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06) !important;
 }
 
+/* corrections for the position of login button in the upper left corner */
 #userlogin {
     display: flex;
     align-items: center;
 }
 
+/* Style for the blog title displayed on the home page */
 #introduction {
     display:block;
     text-align: center;
@@ -66,8 +63,14 @@ nav.navbar {
 	margin-top:200px;
 	text-shadow:1px 1px 1px black;
 	font-size:50px;
+    -moz-box-shadow:    inset 0 0 9px grey;
+    -webkit-box-shadow: inset 0 0 9px grey;
+    box-shadow:         inset 0 0 9px grey;
+    width: 6em;
+    border-radius: 25px;
 }
 
+/* Style for the title on category page */
 #box {
     display:block;
     text-align: center;
@@ -79,16 +82,19 @@ nav.navbar {
 	font-size:50px;
 }
 
+/* Style for login, logout and register forms */
 #loginform, #logoutform, #registerform {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Color of the paragraphs */
 p {
     color: black;
 }
 
+/* Style for the title text on category page */
 #categorypage {
     display:block;
     text-align: center;
@@ -97,15 +103,17 @@ p {
     font-size: 40px;
 }
 
-
+/* Style for post position */
 #post {
     margin-top: -6em;
 }
 
+/* Style for one of the horizontal lines */
 hr {
     border-top: 1px solid grey;
   }
 
+  /* Footer style */
 .footer {
     background-color: #E3E3E3;
     margin-top:auto;
