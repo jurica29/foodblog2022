@@ -30,6 +30,10 @@ hr.hrlogin {
     margin-bottom: 5px;
   }
 
+hr.registerhr {
+    margin: auto;
+  }
+
 #blogcategories {
     display:inline-flexbox;
     text-align: center;

@@ -3,7 +3,7 @@
 <div id="registerform">
 <form method="post">
 <h1>Please register your account below:</h1>
-<hr>
+<hr class="registerhr">
   {% csrf_token %}{{form|crispy}}
   <p>Have an account? Login <a href="/login">Here</a>!</p>
   <button type="submit" class="btn btn-success">Register</button>
