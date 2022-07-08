@@ -7,30 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}Daily Foodie</title>
-
+    <!-- Bulma -->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css">
+    <!-- CSS file -->
     <link rel="stylesheet" href="{% static '/style.css' %}"/>
       <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/c7dbda0798.js" crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/6.1.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-
-    <style>
-        nav.navbar {
-            height: 6rem !important;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06) !important;
-        }
-    </style>
-
 </head>
 <body>
-    <!-- Navbar start -->
+    <!-- Navbar-->
     <nav class="navbar">
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="/">
                     <strong>DAILY FOODIE | Daily posts for all foodies </strong>
                 </a>
+        <!-- Navbar login -->
         <div id="userlogin">
           <ul class="navbar-nav">
             {% if user.is_authenticated %}
@@ -45,16 +39,19 @@
             {% endif %}
           </ul>
         </div>
-                <span class="navbar-burger burger"  data-target="navbarMenu">
-                    <span><a href="/" class="navbar-item is-active is-size-5 has-text-weight-semibold"></a>Home</span>
-                    <span><a href="{% url 'register' %}" class="navbar-item is-size-5 has-text-weight-semibold"></a>Register</span>
-                    <span><a href="{% url 'about' %}" class="navbar-item is-size-5 has-text-weight-semibold"></a>Contact</span>
-                </span>
+        <!-- Navbar toggle option for smaller screens -->
+                <a class="navbar-burger" id="burger" data-target="navbarMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+
             </div>
 
-            <div id="navbarMenu" class="navbar-menu">
+            <div id="nav-links" class="navbar-menu">
                 <div class="navbar-end">
                     <div class="navbar-item">
+                        <!-- Navbar search option -->
                         <form method="get" action="{% url 'search' %}">
                             <div class="control has-icons-left">
                                 <input class="input is-rounded" name="query" type="text" placeholder="Search">
@@ -64,7 +61,7 @@
                             </div>
                         </form>
                     </div>
-
+                    <!-- Navbar elements -->
                     <a href="/" class="navbar-item is-active is-size-5 has-text-weight-semibold">
                         Home
                     </a>
@@ -117,5 +114,7 @@
             </p>
         </div>
     </footer>
+    <!-- JS script -->
+    <script src="{% static 'index.js' %}"></script>
 </body>
 </html>
