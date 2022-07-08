@@ -8,10 +8,10 @@ body {
     background-color: #F6F6F8;
 }
 
- /* Style for the horizontal lines across various pages */
+ /* Style for the horizontal lines across various website pages */
 hr.hrline {
     border-top: 4px solid grey;
-    width: 2em;
+    width: 1em;
     margin: auto;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -170,6 +170,7 @@ hr {
     margin-top:auto;
 }
 
+/* Hover color for footer */
 .footer :hover {
     color: goldenrod;
 }

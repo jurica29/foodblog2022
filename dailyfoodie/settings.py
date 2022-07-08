@@ -34,7 +34,8 @@ ALLOWED_HOSTS = ['dailyfoodieblog.herokuapp.com', 'localhost']
 
 
 # Application definition
-
+# Project consists of apps: blog, blogapp, registration
+# Installed apps include cloudinary, crispy forms and ckeditor
 INSTALLED_APPS = [
     'blogapp.apps.BlogappConfig',
     'blog.apps.BlogConfig',
@@ -147,4 +148,5 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Used for redirecting user to home page after login is completed
 LOGIN_REDIRECT_URL = '/'
