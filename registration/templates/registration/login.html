@@ -4,6 +4,7 @@
 <form method="post">
   <h1>Log into your account below:</h1>
   <hr class="hrlogin">
+  <!-- A CSRF token is a secure random token that is used to prevent CSRF attacks. -->
   {% csrf_token %}{{form|crispy}}
   <p>Don't have an account? Create one <a href="{% url 'register' %}">Here</a>!</p>
   <button type="submit" class="btn btn-success">Login</button>

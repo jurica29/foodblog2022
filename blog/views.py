@@ -5,6 +5,7 @@ from django.shortcuts import render
 # Importing post model from models.py
 from blogapp.models import Post
 
+# I have used function based views below.
 # Home page view - used to display only active posts and render home page
 def frontpage(request):
     posts = Post.objects.filter(status=Post.ACTIVE)

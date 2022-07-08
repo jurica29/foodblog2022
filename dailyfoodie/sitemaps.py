@@ -1,8 +1,10 @@
 from django.contrib.sitemaps import Sitemap
 from django.shortcuts import reverse
 
+# Importing models of category and post from blogapp
 from blogapp.models import Category, Post
 
+# Sitemap models
 class CategorySitemap(Sitemap):
     def items(self):
         return Category.objects.all()

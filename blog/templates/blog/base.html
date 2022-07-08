@@ -24,9 +24,10 @@
                 <a class="navbar-item" href="/">
                     <strong>DAILY FOODIE | Daily posts for all foodies </strong>
                 </a>
-        <!-- Navbar login -->
+        <!-- Navbar login/logout section -->
         <div id="userlogin">
           <ul class="navbar-nav">
+            <!-- Only if user is logged in/registered then its' possible for them to see or leave comments -->
             {% if user.is_authenticated %}
             <span class="navbar-text">User | {{user.username}} </span>
             <li class="nav-item">

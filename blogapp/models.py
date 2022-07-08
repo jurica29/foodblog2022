@@ -1,6 +1,9 @@
 from django.db import models
+# Rich text field editor imported for easy editing of posts
 from ckeditor.fields import RichTextField
 
+# Describes to database what to store
+# Category is one of the main models
 class Category(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField()
@@ -16,16 +19,19 @@ class Category(models.Model):
     def get_absolute_url(self):
         return '/%s/' % self.slug
 
-# Creating post class 
+# Another model used is "Post"
+# Model for post has two possible post statuses
 class Post(models.Model):
     ACTIVE = 'active'
     DRAFT = 'draft'
 
+# There are two possible statuses to filter posts
     CHOICES_STATUS = (
         (ACTIVE, 'Active'),
         (DRAFT, 'Draft')
     )
     
+    # These are fields used within admin interface
     category = models.ForeignKey(Category, related_name='posts', on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     slug = models.SlugField()

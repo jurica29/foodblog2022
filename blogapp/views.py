@@ -1,10 +1,13 @@
+# Used for search option
 from django.db.models import Q
+# Used for rendering, redirecting or displaying 404 page
 from django.shortcuts import get_object_or_404, redirect, render
 
+# Importing comment form as well as post and category fields
 from .forms import CommentForm
 from .models import Post, Category
 
-# Create your views here.
+# Function view used for detail page functionality/display
 def detail(request, category_slug, slug):
     post = get_object_or_404(Post, slug=slug, status=Post.ACTIVE)
 
@@ -22,12 +25,14 @@ def detail(request, category_slug, slug):
 
     return render(request, 'blogapp/detail.html', {'post': post, 'form': form})
 
+# Function view used for category display/functionality
 def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     posts = category.posts.filter(status=Post.ACTIVE)
 
     return render(request, 'blogapp/category.html', {'category': category, 'posts': posts})
 
+# Function view used for search bar functionality/display
 def search(request):
     query = request.GET.get('query','')
 

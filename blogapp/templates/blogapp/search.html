@@ -14,7 +14,7 @@
                                 <h1>Search results</h1>
                                 <h3>Query "{{ query }}"</h3>
                             </div>
-
+                            <!-- Search page looping over posts. -->
                             {% for post in posts %}
                                 <div class="content is-medium">
                                     <a href="{% url 'post_detail' post.category.slug post.slug %}">
@@ -24,6 +24,7 @@
                                     </a>
                                 </div>
                             {% empty %}
+                            <!-- Message displayed if there are no results for a given query. -->
                                 <div class="content">
                                     <p>There are no results for this query :(</p>
                                 </div>

@@ -4,6 +4,7 @@
 {% block title %} {{ post.title }} | {% endblock %}
 
 {% block content %}
+<!-- Dynamically generated page title. -->
 <a id="detailpage" href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a>
 <section id="post" class="hero">
     <div class="hero-body">
@@ -17,9 +18,11 @@
                                 <p><strong>{{ post.intro }}</strong></p>
                                 {% if post.image %}
                                 <figure class="image">
+                                    <!-- Image displayed via this url. -->
                                     <img src="{{ post.image.url }}">
                                 </figure>
                                 {% endif %}
+                                <!-- "Safe" used for rich text editor to function properly for text writing/editing. -->
                                 <p>{{ post.body|safe }}</p>
 
                                 <hr>
@@ -27,9 +30,11 @@
                                 <h2 class="subtitle is-4">Leave a comment:</h2>
 
                                 <form method="post" class="mb-6">
+                                    <!-- A CSRF token is a secure random token that is used to prevent CSRF attacks. -->
                                     {% csrf_token %}
 
                                     {{ form.as_p }}
+                                    <!-- Only registered/logged in users can submit comments.-->
                                     {% if user.is_authenticated %}
                                     <div class="field">
                                         <div class="control">
@@ -37,6 +42,7 @@
                                         </div>
                                     </div>
                                 </form>
+                                <!-- Looping over comments. -->
                                 {% for comment in post.comments.all %}
                                     <article class="media box">
                                         <div class="media-content">
@@ -46,6 +52,7 @@
                                     </article>
                                 {% endfor %}
                                     {% else %}
+                                    <!-- Message displayed for users who are not registered or logged in. -->
                                 <p>You can't see or leave comments if you are not registered user. 
                                     Don't have an account? Create one <a href="{% url 'register' %}">Here</a>!</p>
                                 <p>You already have an account? Login <a href="/login">Here</a>!</p>

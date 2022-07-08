@@ -25,6 +25,7 @@ from .sitemaps import CategorySitemap, PostSitemap
 # Sitemaps is used to provide information about everything on the website
 sitemaps = {'category': CategorySitemap, 'post': PostSitemap}
 
+# Urls of all apps used for this website
 urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
     path('robots.txt', robots_txt, name='robots_txt'),
