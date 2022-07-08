@@ -3,7 +3,7 @@
 <div id="loginform">
 <form method="post">
   <h1>Log into your account below:</h1>
-  <hr>
+  <hr class="hrlogin">
   {% csrf_token %}{{form|crispy}}
   <p>Don't have an account? Create one <a href="{% url 'register' %}">Here</a>!</p>
   <button type="submit" class="btn btn-success">Login</button>
