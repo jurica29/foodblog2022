@@ -1,4 +1,5 @@
 // Navbar toggle for smaller screens
+// Two main variables
 const burgerIcon = document.querySelector('#burger');
 const navbarMenu = document.querySelector('#nav-links');
 
