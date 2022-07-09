@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<p> Are you sure you want to delete "{{item}}"?</p>
+
+<form action="{% url 'deleteComment' item.id %}" method="POST">
+	{% csrf_token %}	
+
+<a href="{% url 'post_detail' item.post.category.slug item.post.slug  %}">Cancel</a>
+<input type="submit" name="Confirm">
+
+</form>
+
+{% endblock %}

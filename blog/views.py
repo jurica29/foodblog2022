@@ -11,7 +11,7 @@ def frontpage(request):
     posts = Post.objects.filter(status=Post.ACTIVE)
     return render(request, 'blog/frontpage.html', {'posts': posts})
 
-# About page view - renders about page
+# About page view - renders "about" page
 def about(request):
     return render(request, 'blog/about.html')
 

@@ -4,7 +4,7 @@ from .forms import RegisterForm
 from django.contrib.auth import login, logout, authenticate
 
 # Function based views used
-# View for register page
+#  View for register page
 def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)

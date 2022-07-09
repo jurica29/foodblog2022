@@ -47,7 +47,13 @@
                                     <article class="media box">
                                         <div class="media-content">
                                             <strong>{{ comment.name }}</strong> <small>{{ comment.created_at|date:'d-m-Y H:i' }}</small><br>
-                                            {{ comment.body }}
+                                            <br>
+                                            {{ comment.body }} 
+                                            <br>
+                                            {% if user.username == comment.name %}
+                                            <button class="button is-secondary"><a href="{% url 'editComment' comment.id %}">Edit</a>
+                                            <button class="button is-danger"><a href="{% url 'deleteComment' comment.id %}">Delete</a>
+                                            {% endif %}
                                         </div>
                                     </article>
                                 {% endfor %}

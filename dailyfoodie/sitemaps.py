@@ -13,5 +13,6 @@ class PostSitemap(Sitemap):
     def items(self):
         return Post.objects.filter(status=Post.ACTIVE)
     
+    # Last modification date
     def lastmod(self, obj):
         return obj.created_at

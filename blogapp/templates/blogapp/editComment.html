@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<p> Are you sure you want to edit this comment ?</p>
+
+<form action="" method="POST">
+
+	{% csrf_token %}
+	{{form.as_p}}
+		
+<a href="{% url 'post_detail' comment.post.category.slug comment.post.slug %}">Cancel</a>
+<input type="submit" name="Submit">
+
+</form>
+
+{% endblock %}
