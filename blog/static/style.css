@@ -103,7 +103,18 @@ a.category1, a.category2 {
     color: goldenrod;
   }
 
+  /* Style for back button on the post detail page */
+#back-button {
+    display: flex;
+    justify-content: center;
+    font-family: helvetica, sans-serif;
+    color: grey;
+    text-decoration: none;
+}
 
+#back{
+    color: grey;
+}
 /* Style for register, login and logout forms */
 #registerform {
     display: flex;

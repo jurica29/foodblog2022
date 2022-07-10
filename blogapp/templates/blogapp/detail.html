@@ -72,6 +72,10 @@
                </div>
            </section>
         </div>
+        <!-- Back button which returns user one page -->
+        <div id="back-button" class="back-button">
+            <button class="button is-rounded"><a id="back" href="{% url 'category_detail' post.category.slug %}">BACK</a>
+        </div>
     </div>
 </section>
 {% endblock %}
