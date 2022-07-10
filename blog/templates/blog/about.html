@@ -1,9 +1,28 @@
-<!-- About page -->
+<!-- Contact page -->
 {% extends 'blog/base.html' %}
 {% load static %}
 
 {% block title %} Contact | {% endblock %}
 
 {% block content %}
-    <h1>Please contact me at ...</h1>
+    <h1>Please contact me via the form below:</h1>
+
+    <!-- !!! Create a form  -->
+    <form action="" method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p}}
+            
+    <input type="submit" name="Submit">
+        
+    </form>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 {% endblock %}
