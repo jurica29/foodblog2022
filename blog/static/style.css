@@ -112,13 +112,11 @@ a.category1, a.category2 {
 }
 
 #loginform {
+    height: 200px;
+    margin: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5em;
-    margin-left:auto;
-    margin-right: auto;
-    margin-bottom: auto;
     font-size: 20px;
 }
 
@@ -132,9 +130,60 @@ a.category1, a.category2 {
     margin-bottom: auto;
 }
 
+/* Style for comment edit & delete pages */
+#editingcomment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8em;
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+#deletingcomment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10em;
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+#deletecomment {
+    display: flex;
+    justify-content: center;
+}
+
+#editcomment {
+    display: flex;
+    justify-content: center;
+}
+
+/* Colors for edit and delete comment buttons */
+#editbutton {
+    color: red;
+}
+
+#deletebutton {
+    color: white;
+}
+
+/* Style for comments */
+#commentbox {
+    padding-bottom: 1px;
+}
+
+/* Edit and delete comment buttons position fix */
+#buttons {
+    padding: 6px;
+}
+
+
 /* Style for logout page message */
 .logouttext, .logouttext2 {
-    font-size: 20px;
+    font-size: 30px;
 }
 
 /* Color of the paragraphs */

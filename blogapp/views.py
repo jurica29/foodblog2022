@@ -26,6 +26,7 @@ def detail(request, category_slug, slug):
 
     return render(request, 'blogapp/detail.html', {'post': post, 'form': form})
 
+# Function view used for deleting comment
 def deleteComment(request, pk):
 
     comment = Comment.objects.get(id=pk)
@@ -41,6 +42,7 @@ def deleteComment(request, pk):
 
     return render(request, 'blogapp/deleteComment.html', context)
 
+# Function view used for editing comment
 def editComment(request, pk):
 
     comment = Comment.objects.get(id=pk)

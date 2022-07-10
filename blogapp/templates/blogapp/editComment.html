@@ -1,9 +1,10 @@
+<!-- Edit comment option page. -->
 {% extends 'blog/base.html' %}
 
 {% block content %}
 
-<p> Are you sure you want to edit this comment ?</p>
-
+<p id="editcomment"> Are you sure you want to edit this comment?</p>
+<div id="editingcomment">
 <form action="" method="POST">
 
 	{% csrf_token %}
@@ -13,5 +14,6 @@
 <input type="submit" name="Submit">
 
 </form>
+</div>
 
 {% endblock %}
