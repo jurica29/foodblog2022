@@ -7,10 +7,15 @@
 <div id="deletingcomment">
 <form action="{% url 'deleteComment' item.id %}" method="POST">
 	{% csrf_token %}	
-
-<a href="{% url 'post_detail' item.post.category.slug item.post.slug  %}">Cancel</a>
-<input type="submit" name="Confirm">
-
+<div id="buttonbox">
+<div id="cancelbut2">
+<button class="button is-danger"><a id="cancel" href="{% url 'post_detail' item.post.category.slug item.post.slug  %}">Cancel</a>
+</div>
+<div id="submitbut2">
+<button class="button is-success" id="submit">Submit</button>
+</div>
+</div>
 </form>
+</div>
 </div>
 {% endblock %}

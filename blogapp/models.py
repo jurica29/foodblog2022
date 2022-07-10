@@ -52,7 +52,7 @@ class Post(models.Model):
     def get_absolute_url(self):
         return '/%s/%s/' % (self.category.slug, self.slug)
 
-# Displaying comments
+# Comment model consisting of below fields
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     name = models.CharField(max_length=255)

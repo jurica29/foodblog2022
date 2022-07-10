@@ -121,21 +121,19 @@ a.category1, a.category2 {
 }
 
 #logoutform {
+    height: 200px;
+    margin: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 12em;
-    margin-left:auto;
-    margin-right: auto;
-    margin-bottom: auto;
+    font-size: 20px;
 }
 
 /* Style for comment edit & delete pages */
 #editingcomment {
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-top: 8em;
+    margin-top: 1em;
     margin-left:auto;
     margin-right: auto;
     margin-bottom: auto;
@@ -143,9 +141,7 @@ a.category1, a.category2 {
 
 #deletingcomment {
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-top: 10em;
     margin-left:auto;
     margin-right: auto;
     margin-bottom: auto;
@@ -154,9 +150,11 @@ a.category1, a.category2 {
 #deletecomment {
     display: flex;
     justify-content: center;
+    margin-top: 6em;
+    font-size: large;
 }
 
-#editcomment {
+#editpage {
     display: flex;
     justify-content: center;
 }
@@ -180,10 +178,42 @@ a.category1, a.category2 {
     padding: 6px;
 }
 
+/* Cancel button style on delete comment page */
+#cancel {
+    color: white;
+}
+
+/* Button style for edit page */
+#buttonbox {
+    display: flex;
+    justify-content: center;
+}
+
+/* Button style for submit and cancel buttons of comment editing page */
+#cancelbut {
+    display: flex;
+    margin-right: 0.1em;
+}
+
+#submitbut {
+    display: flex;
+    margin-left: 0.1em;
+}
+
+/* Button style for submit and cancel buttons of delete comment page */
+#cancelbut2 {
+    display: flex;
+    margin-right: 5em;
+}
+
+#submitbut2 {
+    display: flex;
+    margin-left: -4em;
+}
 
 /* Style for logout page message */
-.logouttext, .logouttext2 {
-    font-size: 30px;
+.logouttext2 {
+    font-size: 20px;
 }
 
 /* Color of the paragraphs */

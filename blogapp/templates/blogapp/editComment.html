@@ -3,16 +3,19 @@
 
 {% block content %}
 
-<p id="editcomment"> Are you sure you want to edit this comment?</p>
+<p id="editpage"> Edit the comment below: </p>
 <div id="editingcomment">
 <form action="" method="POST">
-
 	{% csrf_token %}
 	{{form.as_p}}
-		
-<a href="{% url 'post_detail' comment.post.category.slug comment.post.slug %}">Cancel</a>
-<input type="submit" name="Submit">
-
+<div id="buttonbox">
+<div id="cancelbut">
+<button class="button is-danger"><a id="cancel" href="{% url 'post_detail' comment.post.category.slug comment.post.slug %}">Cancel</a>
+</div>
+<div id="submitbut">
+<button class="button is-success" id="submit">Submit</button>
+</div>
+</div>
 </form>
 </div>
 

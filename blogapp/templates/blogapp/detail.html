@@ -50,7 +50,7 @@
                                             <br>
                                             {{ comment.body }} 
                                             <br>
-                                            <!-- If user is logged in, user can edit or delete comments that they've created. -->
+                                            <!-- If user is logged in, user can edit or delete comments via buttons below. -->
                                             {% if user.username == comment.name %}
                                             <div id="buttons">
                                             <button class="button is-secondary"><a id="editbutton" href="{% url 'editComment' comment.id %}">Edit</a>
@@ -62,6 +62,7 @@
                                 {% endfor %}
                                     {% else %}
                                     <!-- Message displayed for users who are not registered or logged in. -->
+                                    <!-- Those potential users can login or register below. -->
                                 <p>You can't see or leave comments if you are not registered user. 
                                     Don't have an account? Create one <a href="{% url 'register' %}">Here</a>!</p>
                                 <p>You already have an account? Login <a href="/login">Here</a>!</p>
