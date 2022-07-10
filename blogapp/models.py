@@ -45,7 +45,7 @@ class Post(models.Model):
     class Meta:
         ordering = ('-created_at',)
 
-# Displaying post names within django admin section
+# Displaying post names within django admin area
     def __str__(self):
         return self.title 
     
@@ -60,6 +60,7 @@ class Comment(models.Model):
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+# Displaying comment creators names within admin area
     def __str__(self):
         return self.name
 

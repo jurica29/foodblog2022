@@ -3,6 +3,7 @@ from django import forms
 from .models import Comment
 
 # Used for comment option functionality/display
+# Two fields, email and body which user can use
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
