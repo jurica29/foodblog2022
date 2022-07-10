@@ -151,12 +151,14 @@ a.category1, a.category2 {
     display: flex;
     justify-content: center;
     margin-top: 6em;
+    margin-bottom: 1em;
     font-size: large;
 }
 
 #editpage {
     display: flex;
     justify-content: center;
+    font-size: large;
 }
 
 /* Colors for edit and delete comment buttons */
