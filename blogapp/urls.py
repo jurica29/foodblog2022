@@ -2,7 +2,8 @@ from django.urls import path
 
 from . import views
 
-# URL configuration for search bar, detail page and category detail
+# URL configuration for search bar, edit comment page, delete comment page  
+# detail page and category detail
 urlpatterns = [
     path('search/', views.search, name='search'),
     path('deleteComment/<str:pk>/', views.deleteComment, name='deleteComment'), 

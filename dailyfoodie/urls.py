@@ -27,12 +27,20 @@ sitemaps = {'category': CategorySitemap, 'post': PostSitemap}
 
 # Urls of all apps used for this website
 urlpatterns = [
+    # Url for sitemap
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
+    # Url for robots.txt
     path('robots.txt', robots_txt, name='robots_txt'),
+    # Urls for admin area
     path('admin/', admin.site.urls),
+    # Url for contact page
     path('about/', about, name='about'),
+    # Url for registration app urls
     path('registration/', include('registration.urls')),
+    # Url for blogapp urls
     path('blogapp/', include('blogapp.urls')),
+    # Url for authorization
     path('', include("django.contrib.auth.urls")),
+    # Url for home page
     path('', frontpage, name='frontpage'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
