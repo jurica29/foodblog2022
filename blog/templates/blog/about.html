@@ -5,8 +5,8 @@
 {% block title %} Contact | {% endblock %}
 
 {% block content %}
-    <h1>Please contact me via the form below:</h1>
-
+<h1 id="contacttitle">Please contact me via the form below:</h1>
+<div id="contactbox">
     <!-- !!! Create a form  -->
     <form action="" method="POST">
 
@@ -17,12 +17,5 @@
     <input type="submit" name="Submit">
         
     </form>
-
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+</div>
 {% endblock %}

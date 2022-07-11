@@ -3,6 +3,9 @@ from django.db.models import Q
 # Used for rendering, redirecting or displaying 404 page
 from django.shortcuts import get_object_or_404, redirect, render
 
+# used to send message
+from django.contrib import messages
+
 # Importing comment form as well as post and category field
 from .forms import CommentForm
 from .models import Post, Category, Comment
@@ -71,6 +74,10 @@ def category(request, slug):
 # Function view used for search bar functionality/display
 def search(request):
     query = request.GET.get('query','')
+
+# If query is empty or if it is not aphabetical then warning is displayed.
+    if query == "" or not query.isalpha():
+        messages.error(request, "Hey! Please use valid input!")
 
     posts = Post.objects.filter(status=Post.ACTIVE).filter(Q(title__icontains=query) | Q(intro__icontains=query) | Q(body__icontains=query)) 
 
