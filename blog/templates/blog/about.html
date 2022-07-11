@@ -14,6 +14,7 @@
         <p class="has-text-centered">{{ message }}</p>
         {% endfor %}
         {% csrf_token %}
+        <!-- Name input area  -->
         <div class="field">
             <label for="name" class="label is-size-4 has-text-weight-light"></label>
             <div class="control has-icons-left">
@@ -24,6 +25,7 @@
             </div>
         </div>
         <div class="field">
+            <!-- Email input area  -->
             <label for="email" class="label is-size-4 has-text-weight-light"></label>
             <div class="control has-icons-left">
             <span class="icon is-left">
@@ -33,6 +35,7 @@
             </div>
         </div>
         <div class="field">
+            <!-- Message area  -->
             {% render_field form.message rows="10" placeholder="Your message" class="textarea" %}
         </div>
         <button type="submit" class="button is-warning is-size-5">Submit</button>
