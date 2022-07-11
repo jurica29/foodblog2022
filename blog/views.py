@@ -10,6 +10,9 @@ from django.contrib import messages
 # import contact model
 from .models import Contact
 
+# Importing post model from models.py
+from blogapp.models import Post
+
 # create a form from model contact
 class ContactForm(forms.ModelForm):
 
@@ -17,19 +20,13 @@ class ContactForm(forms.ModelForm):
         model = Contact
         exclude = ('date_created', )
 
-# Importing post model from models.py
-from blogapp.models import Post
-
-# I have used function based views below.
-# Home page view - used to display only active posts and render home page
 def frontpage(request):
+    """Home page view"""
     posts = Post.objects.filter(status=Post.ACTIVE)
     return render(request, 'blog/frontpage.html', {'posts': posts})
 
-# Contact page view 
 def about(request):
-
-    #
+    """Contact page view """
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid:
@@ -43,8 +40,8 @@ def about(request):
 
     return render(request, 'blog/about.html',context)
 
-# Robots_txt is used for dealing with bots
 def robots_txt(request):
+    """Robots_txt is used for dealing with bots"""
     text = [
         "User-Agent: *",
         "Disallow: /admin/",

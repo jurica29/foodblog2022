@@ -10,8 +10,9 @@ from django.contrib import messages
 from .forms import CommentForm
 from .models import Post, Category, Comment
 
-# Function view used for detail page functionality/display
+
 def detail(request, category_slug, slug):
+    """ Function view used for detail page functionality/display """
     post = get_object_or_404(Post, slug=slug, status=Post.ACTIVE)
 
     if request.method == 'POST':
@@ -29,9 +30,9 @@ def detail(request, category_slug, slug):
 
     return render(request, 'blogapp/detail.html', {'post': post, 'form': form})
 
-# Function view used for deleting comment
-def deleteComment(request, pk):
 
+def deleteComment(request, pk):
+    """Function view used for deleting comment"""
     comment = Comment.objects.get(id=pk)
 
     print(comment)
@@ -45,9 +46,9 @@ def deleteComment(request, pk):
 
     return render(request, 'blogapp/deleteComment.html', context)
 
-# Function view used for editing comment
-def editComment(request, pk):
 
+def editComment(request, pk):
+    """Function view used for editing comment"""
     comment = Comment.objects.get(id=pk)
     form = CommentForm(instance=comment)
 
@@ -64,15 +65,17 @@ def editComment(request, pk):
 
     return render(request, 'blogapp/editComment.html', context)
 
-# Function view used for category display/functionality
+
 def category(request, slug):
+    """Function view used for category display/functionality"""
     category = get_object_or_404(Category, slug=slug)
     posts = category.posts.filter(status=Post.ACTIVE)
 
     return render(request, 'blogapp/category.html', {'category': category, 'posts': posts})
 
-# Function view used for search bar functionality/display
+
 def search(request):
+    """Function view used for search bar functionality/display"""
     query = request.GET.get('query','')
 
 # If query is empty or if it is not aphabetical then warning is displayed.
