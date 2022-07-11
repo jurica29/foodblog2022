@@ -2,14 +2,40 @@
 {% load crispy_forms_tags %} {% block content %}
 {% load widget_tweaks %}
 <!-- Register page -->
-<div id="registerform">
-<form method="post">
-<h1>Please register your account below:</h1>
-<hr class="registerhr">
-<!-- A CSRF token is a secure random token that is used to prevent CSRF attacks. -->
-  {% csrf_token %}{{form|crispy}}
-  <p>Have an account? Login <a href="/login">Here</a>!</p>
-  <button type="submit" class="btn btn-success">Register</button>
-</form>
+<div class="container">
+  <div class="columns is-justify-content-center">
+    <div class="column is-6-tablet is-5-desktop is-4-widescreen is-3-fullh">
+      <form method="post">
+        <!-- A CSRF token is a secure random token that is used to prevent CSRF attacks. -->
+        {% csrf_token %}
+        <!-- Username input field -->
+        <label class="is-block mb-4">
+          <span class="is-block mb-2">Username:</span>
+          {% render_field form.username class="input" placeholder="johndoe" %}
+        </label>
+        <!-- Email address input -->
+        <label class="is-block mb-4">
+          <span class="is-block mb-2">Email address:</span>
+          <div>{% render_field form.email class="input" placeholder="your@email.com" %}</div>
+        </label>
+        <!-- Password input field -->
+        <label class="is-block mb-4">
+          <span class="is-block mb-2">Password:</span>
+          <div>{% render_field form.password1 class="input" placeholder="password" %}</div>
+        </label>
+        <!-- Password confirmation field -->
+        <label class="is-block mb-4">
+          <span class="is-block mb-2">Password Confirmation:</span>
+          <div>{% render_field form.password2 class="input" placeholder="password" %}</div>
+        </label>
+        <!-- Register button  -->
+        <div class="mb-4">
+          <button type="submit" class="button is-warning px-4">Register</button>
+        </div>
+      </form>
+      <!-- Login option for users who have account -->
+      <p>Have an account? Login <a href="/login">Here</a>!</p>
+    </div>
+  </div>
 </div>
 {% endblock %}
