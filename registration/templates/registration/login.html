@@ -9,6 +9,16 @@
           <form method="post">
           <!-- A CSRF token is a secure random token that is used to prevent CSRF attacks. -->
         	{% csrf_token %}
+          <!-- Error message field if user doesn't enter username or password properly -->
+          {% if form.non_field_errors %}
+          <div class="notification is-danger">
+          <ul class='form-errors'>
+              {% for error in form.non_field_errors %}
+                  <li>{{ error }}</li>
+              {% endfor %}
+          </ul>
+          </div>
+          {% endif %}
           <!-- Username field -->
             <div class="field">
               <label for="" class="label">Email</label>
