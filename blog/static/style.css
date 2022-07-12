@@ -338,17 +338,7 @@ hr {
     font-size: large;
 }
 
-  /* Footer style */
-.footer {
-    background-color: #E3E3E3;
-    margin-top:auto;
-}
-
-/* Hover color for footer */
-.footer :hover {
-    color: goldenrod;
-}
-
+  /* Delete comment page style */
 #deletetitle {
     display: flex;
     justify-content: center;
@@ -364,3 +354,23 @@ hr {
     color: grey;
     font-size: large;
 }
+
+ /* Submit button at contact page */
+#submitcontactmessage {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  /* Footer style */
+.footer {
+    background-color: #E3E3E3;
+    margin-top:auto;
+}
+
+/* Hover color for footer */
+.footer :hover {
+    color: goldenrod;
+}
+
