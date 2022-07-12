@@ -207,7 +207,7 @@ a.category {
 #deletecomment {
     display: flex;
     justify-content: center;
-    margin-top: 6em;
+    margin-top: 3.5em;
     margin-bottom: 1em;
     font-size: large;
 }
@@ -347,4 +347,20 @@ hr {
 /* Hover color for footer */
 .footer :hover {
     color: goldenrod;
+}
+
+#deletetitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 450px;
+    height: 80px;
+    padding-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -0.5em;
+    margin-top: 3em;
+    color: grey;
+    font-size: large;
 }
