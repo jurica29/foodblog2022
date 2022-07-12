@@ -103,6 +103,11 @@ a.category1, a.category2 {
     color: goldenrod;
   }
 
+/* Login button on home page */
+#loginlink {
+    color: grey;
+}
+
   /* Style for back button on the post detail page */
 #back-button {
     display: flex;
