@@ -169,13 +169,13 @@ a.category {
 
 /* Style for logout page*/
 .logouttext2 {
-    width: 280px;
-    border: 10px dotted goldenrod;
+    width: 270px;
+    border: 7px dotted grey;
     padding: 25px;
     margin: 20px;
     font-size: 25px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: goldenrod;
+    color: grey;
 }
 
 #logoutform {
