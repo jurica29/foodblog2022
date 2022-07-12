@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bulma-social": "^2.1.0",
     "tinymce": "^6.1.0"
   }
 }

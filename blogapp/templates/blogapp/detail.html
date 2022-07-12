@@ -52,10 +52,8 @@
                                             <br>
                                             <!-- If user is logged in, user can edit or delete comments via buttons below. -->
                                             {% if user.username == comment.name %}
-                                            <div id="buttons">
                                             <button class="button is-secondary"><a id="editbutton" href="{% url 'editComment' comment.id %}">Edit</a>
                                             <button class="button is-danger"><a id="deletebutton" href="{% url 'deleteComment' comment.id %}">Delete</a>
-                                            </div>
                                             {% endif %}
                                         </div>
                                     </article>
