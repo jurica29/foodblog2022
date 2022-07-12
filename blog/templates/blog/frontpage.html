@@ -6,16 +6,20 @@
 
 {% block content %}
 <!-- Blog title -->
-    <div id="introduction" class="intro my-1">
-       <h1 class="text-center">Daily Foodie</h1>
-    </div>
-    <!-- Categories names displayed below title -->
-    <div id="blogcategories">
-        <i class="fas fa-utensils"></i>
-        <a href="/blogapp/recipes/" class="category1">Recipes</a>
-        <hr class="hrline">
-        <i class="fas fa-globe-europe"></i>
-        <a href="/blogapp/FoodAroundtheWorld/"class="category2">Food Around the World</a>
+<!-- Categories names displayed below title -->
+    <div id="categories" class="container">
+        <div class="mb-6 pb-3 columns is-multiline">
+          <div class="column is-12 is-6-desktop mx-auto has-text-centered">
+            <h2 id="blogtitle" class="mb-4 is-size-1 is-size-3-mobile has-text-weight-bold">Daily Foodie</h2>
+            <p class="subtitle has-text-grey mb-5">Welcome to my food blog! <br> Enjoy reading some foodie stories or just trying out new recipes.</p>
+            <div class="buttons is-centered">
+              <a class="mr-3" href="#">
+                <button class="categorybuttons button is-yellow is-rounded"><a href="/blogapp/recipes/" class="category">Recipes</a></button>
+              <a href="#">
+                <button class="categorybuttons button is-yellow is-rounded"><a href="/blogapp/FoodAroundtheWorld/" class="category">Food Around the World</a></button>
+            </div>
+          </div>
+        </div>
     </div>
     <!-- Main section used for displaying posts and images generated with django framework -->
     <section id="mainbody" class="hero">

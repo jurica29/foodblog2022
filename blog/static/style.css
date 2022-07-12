@@ -8,33 +8,84 @@ body {
     background-color: #F6F6F8;
 }
 
- /* Style for the horizontal lines across various website pages */
-hr.hrline {
-    border-top: 4px solid grey;
-    width: 1em;
-    margin: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-
-hr.hrlogin {
-    margin: auto;
-  }
-
-hr.registerhr {
-    margin: auto;
-  }
-
-  /* Style for blog categories displayed on the home page below blog title */
-#blogcategories {
-    display:inline-flexbox;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2em;
-    font-size: 20px;
-    text-align: center;
+ /* Category buttons at home page */
+.categorybuttons {
+    width: 200px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: whitesmoke;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 20px;
 }
+
+.categorybuttons:before {
+    content: '';
+    background: linear-gradient(45deg, gray, white, gold,goldenrod);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(8px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .1s ease-in-out;
+    border-radius: 10px;
+}
+
+.categorybuttons:active {
+    color: whitesmoke;
+}
+
+.categorybuttons:active:after {
+    background: transparent;
+}
+
+.categorybuttons:hover:before {
+    opacity: 1;
+}
+
+.categorybuttons:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+       gainsboro, white, silver
+      );
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+ /* Blog title */
+ #blogtitle {
+    color: grey;
+    letter-spacing: .05em;
+    text-shadow: 
+      4px 4px 0px #d5d5d5, 
+      7px 7px 0px rgba(0, 0, 0, 0.2);
+  }
+
+ /* Blog intro text section and categories */
+#categories {
+    margin-bottom: -5em;
+  }
 
 /* Navbar style */
 .navbar {
@@ -50,25 +101,6 @@ nav.navbar {
 #userlogin {
     display: flex;
     align-items: center;
-}
-
-/* Style for the blog title displayed on the home page */
-#introduction {
-    display:block;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 20px;
-    color:grey;
-	text-align:center;
-	margin-top:200px;
-	text-shadow:1px 1px 1px black;
-	font-size:50px;
-    -moz-box-shadow:    inset 0 0 9px grey;
-    -webkit-box-shadow: inset 0 0 9px grey;
-    box-shadow:         inset 0 0 9px grey;
-    width: 6em;
-    border-radius: 25px;
 }
 
 /* Style for the title on category page */
@@ -94,12 +126,12 @@ a.navbar-item:hover {
 }
 
 /* Style for the links to two main categories below the page title */
-a.category1, a.category2 {
+a.category {
     color: grey;
     text-shadow:1px 0px 0px grey;
   }
 
-  a.category1:hover,a.category2:hover {
+  a.category:hover {
     color: goldenrod;
   }
 
