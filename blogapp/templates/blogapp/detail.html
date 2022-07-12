@@ -5,7 +5,7 @@
 
 {% block content %}
 <!-- Dynamically generated page title. -->
-<a id="detailpage" href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a>
+<a id="detailpage" class="title is-2 is-capitalized has-text-centered" href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a>
 <section id="post" class="hero">
     <div class="hero-body">
         <div class="container">

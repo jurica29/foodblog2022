@@ -82,7 +82,7 @@ body {
       7px 7px 0px rgba(0, 0, 0, 0.2);
   }
 
- /* Blog intro text section and categories */
+ /* Blog intro text section and categories spacing */
 #categories {
     margin-bottom: -5em;
   }
@@ -286,10 +286,25 @@ hr {
     border-top: 1px solid grey;
   }
 
-/* Style for contact page - form */
+/* Styles for the title of contact page, category page and post detail page*/
 #contactme {
     color: grey
 }
+
+/* Style for the title of category page*/
+#categorytitle {
+    color:grey;
+    text-shadow:1px 1px 1px grey;
+    font-size: 0.8em;
+}
+
+/* Style for the detail page*/
+#detailpage {
+    color:grey;
+    text-shadow:1px 1px 1px grey;
+    font-size: 3em;
+}
+
   /* Footer style */
 .footer {
     background-color: #E3E3E3;
