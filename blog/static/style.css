@@ -89,7 +89,7 @@ body {
 
 /* Navbar style */
 .navbar {
-    background-color: #E3E3E3;
+    background-color: lightgrey;
 }
 
 nav.navbar {
@@ -121,13 +121,9 @@ nav.navbar {
 }
 
 /* Hovering color for login button */
-a.nav-link:hover {
-    color: goldenrod;
-}
-
-/* Hovering color for login button */
 a.navbar-item:hover {
     color: goldenrod;
+    background-color: transparent;
 }
 
 /* Style for the links to two main categories below the page title */
@@ -365,7 +361,7 @@ hr {
 
   /* Footer style */
 .footer {
-    background-color: #E3E3E3;
+    background-color: lightgrey;
     margin-top:auto;
 }
 
