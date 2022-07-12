@@ -192,6 +192,7 @@ a.category1, a.category2 {
 #buttonbox {
     display: flex;
     justify-content: center;
+    margin-top: 1em;
 }
 
 /* Button style for submit and cancel buttons of comment editing page */

@@ -1,13 +1,14 @@
 <!-- Edit comment option page. -->
 {% extends 'blog/base.html' %}
-
+{% load widget_tweaks %}
 {% block content %}
 
 <p id="editpage"> Edit the comment below: </p>
 <div id="editingcomment">
 <form action="" method="POST">
 	{% csrf_token %}
-	{{form.as_p}}
+<div>{% render_field form.email class="input" placeholder="your@email.com" %}</div>
+<div>{% render_field form.body rows="10" placeholder="Your message" class="textarea" %}</div>
 <div id="buttonbox">
 <div id="cancelbut">
 <button class="button is-danger"><a id="cancel" href="{% url 'post_detail' comment.post.category.slug comment.post.slug %}">Cancel</a>
