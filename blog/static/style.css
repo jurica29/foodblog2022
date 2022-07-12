@@ -312,6 +312,27 @@ hr {
     font-size: 3em;
 }
 
+/* Style for the search page*/
+#searchpage {
+    margin-top: -7em;
+}
+
+#searchline {
+    display: flex;
+    border: 1.5px solid grey;
+    justify-items: center;
+    margin-top: -1em;
+}
+
+#searchwarning {
+    color: red;
+    font-weight: bold;
+}
+
+#noresults {
+    font-size: large;
+}
+
   /* Footer style */
 .footer {
     background-color: #E3E3E3;

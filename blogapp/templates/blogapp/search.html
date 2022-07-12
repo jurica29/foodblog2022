@@ -9,17 +9,22 @@
             <div class="container">
                 <section class="section">
                     <div class="columns">
-                        <div class="column is-8 is-offset-2">
+                        <div id="searchpage" class="column is-8 is-offset-2">
                             <div class="content is-medium">
                             {% for message in messages %}
-                            <p>{{ message }}</p>
+                            <div class="has-text-centered has-text-weight-semibold is-outlined">
+                            <p id="searchwarning">{{ message }}</p>
+                            </div>
                             {% endfor %}
-                                <h1>Search results</h1>
-                                <h3>Query "{{ query }}"</h3>
+                                <h1 class="has-text-centered">Search results:</h1>
+                                <hr id="searchline">
+                                <div class="box">
+                                <h3 class="has-text-centered">Your query: "{{ query }}"</h3>
+                                </div>
                             </div>
                             <!-- Search page looping over posts. -->
                             {% for post in posts %}
-                                <div class="content is-medium">
+                                <div class="has-text-centered content is-medium">
                                     <a href="{% url 'post_detail' post.category.slug post.slug %}">
                                         <h2 class="subtitle is-4">{{ post.created_at|date:'d-m-Y H:i' }}</h2>
                                         <h1 class="title">{{ post.title }}</h1>
@@ -28,14 +33,18 @@
                                 </div>
                             {% empty %}
                             <!-- Message displayed if there are no results for a given query. -->
-                                <div class="content">
-                                    <p>There are no results for this query :(</p>
+                                <div class="has-text-centered content">
+                                    <p id="noresults" class="has-text-weight-semibold">There are no results for this query :(</p>
                                 </div>
                             {% endfor %}
                         </div>
                     </div>
                 </section>
             </div>
+            <!-- Back button which returns user to home page -->
+             <div id="back-button" class="back-button">
+                <button class="button is-rounded"><a id="back" href="{% url 'frontpage' %}">BACK</a>
+             </div>
         </div>
     </section>
 {% endblock %}
