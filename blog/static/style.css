@@ -103,6 +103,11 @@ nav.navbar {
     align-items: center;
 }
 
+#usernamenavbar {
+    margin-left: 0.7em;
+    color: hsl(38, 80%, 35%);
+}
+
 /* Style for the title on category page */
 #box {
     display:block;
@@ -137,7 +142,9 @@ a.category {
 
 /* Login button on home page */
 #loginlink {
-    color: grey;
+    color: slategrey;
+    font-size: 17px;
+    font-weight: bold;
 }
 
   /* Style for back button on the post detail page */

@@ -29,13 +29,13 @@
           <ul class="navbar-nav">
             <!-- Only if user is logged in/registered then its' possible for them to see or leave comments -->
             {% if user.is_authenticated %}
-            <span class="navbar-text"><b>{{user.username}}</b></span>
+            <span id="usernamenavbar" class="navbar-text"><b>{{user.username}}</b></span>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'log_user_out' %}">Logout</a>
+              <button class="button is-warning is-outlined is-small"><a id="loginlink" class="nav-link" href="{% url 'log_user_out' %}">Logout</a>
             </li>
             {% else %}
             <li class="nav-item">
-                <button class="button is-warning is-rounded is-small"><a id="loginlink" class="nav-link" href="/login">Login</a></button>
+                <button class="button is-warning is-outlined is-small"><a id="loginlink" class="nav-link" href="/login">Login</a></button>
             </li>
             {% endif %}
           </ul>
