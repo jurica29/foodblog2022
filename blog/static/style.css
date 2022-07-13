@@ -204,8 +204,10 @@ a.category {
     display: flex;
     justify-content: center;
     margin-top: 3.5em;
-    margin-bottom: 1em;
+    margin-bottom: 2.5em;
     font-size: large;
+    font-weight: bold;
+    color: grey;
 }
 
 #editpage {
