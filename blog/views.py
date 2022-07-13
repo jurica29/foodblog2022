@@ -15,7 +15,7 @@ from blogapp.models import Post
 
 # create a form from model contact
 class ContactForm(forms.ModelForm):
-
+    """Contact form view"""
     class Meta:
         model = Contact
         exclude = ('date_created', )
