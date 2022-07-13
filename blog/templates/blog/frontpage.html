@@ -1,7 +1,7 @@
 <!-- Home page -->
 <!-- Below code extends this html file across other templates -->
 {% extends 'blog/base.html' %}
-
+{% load responsive_images %}
 {% block title %} Home | {% endblock %}
 
 {% block content %}
@@ -36,7 +36,7 @@
                                         {% if post.image %}
                                         <figure class="image">
                                             <!-- Image is displayed via this url -->
-                                            <img src="{{ post.image.url }}">
+                                            <img class="img-fluid" src="{{ post.image.url }}">
                                         </figure>
                                         {% endif %}
                                     </a>
