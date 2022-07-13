@@ -35,7 +35,7 @@ ALLOWED_HOSTS = ['dailyfoodieblog.herokuapp.com', 'localhost']
 
 # Application definition
 # Project consists of apps: blog, blogapp, registration
-# Installed apps include cloudinary, crispy forms, ckeditor and widget tweaks
+# Installed apps include cloudinary, crispy forms, ckeditor, widget tweaks and responsive images
 INSTALLED_APPS = [
     'blogapp.apps.BlogappConfig',
     'blog.apps.BlogConfig',
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'ckeditor',
     'widget_tweaks',
+    'responsive_images',
 ]
 
 MIDDLEWARE = [
