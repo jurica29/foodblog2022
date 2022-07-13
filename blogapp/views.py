@@ -80,7 +80,7 @@ def search(request):
 
 # If query is empty or if it is not aphabetical then warning is displayed.
     if query == "" or not query.isalpha():
-        messages.error(request, "Please use one word for your search.")
+        messages.error(request, "Please use a keyword for your search.")
 
     posts = Post.objects.filter(status=Post.ACTIVE).filter(Q(title__icontains=query) | Q(intro__icontains=query) | Q(body__icontains=query)) 
 
