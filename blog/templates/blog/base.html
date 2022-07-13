@@ -13,10 +13,9 @@
     <link rel="stylesheet" href="{% static '/style.css' %}"/>
       <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/c7dbda0798.js" crossorigin="anonymous"></script>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/6.1.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
 </head>
 <body>
+
     <!-- Navbar-->
     <nav class="navbar">
         <div class="container">
@@ -24,29 +23,12 @@
                 <a class="navbar-item" href="/">
                     <strong>DAILY FOODIE</strong>
                 </a>
-        <!-- Navbar login/logout section -->
-        <div id="userlogin">
-          <ul class="navbar-nav">
-            <!-- Only if user is logged in/registered then its' possible for them to see or leave comments -->
-            {% if user.is_authenticated %}
-            <span id="usernamenavbar" class="navbar-text"><b>{{user.username}}</b></span>
-            <li class="nav-item">
-              <button class="button is-warning is-outlined is-small"><a id="loginlink" class="nav-link" href="{% url 'log_user_out' %}">Logout</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-                <button class="button is-warning is-outlined is-small"><a id="loginlink" class="nav-link" href="/login">Login</a></button>
-            </li>
-            {% endif %}
-          </ul>
-        </div>
         <!-- Navbar toggle option for smaller screens -->
                 <a class="navbar-burger" id="burger" data-target="navbarMenu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </a>
-
             </div>
 
             <div id="nav-links" class="navbar-menu">
@@ -62,10 +44,24 @@
                             </div>
                         </form>
                     </div>
-                    <!-- Navbar links to other pages -->
-                    <a href="/" class="navbar-item is-active is-size-5 has-text-weight-semibold">
-                        Home
-                    </a>
+
+         <!-- Navbar links to other pages -->
+         <!-- Navbar login/logout section -->
+         <div id="userlogin">
+             <ul class="navbar-nav">
+               <!-- Only if user is logged in/registered then its' possible for them to see or leave comments -->
+               {% if user.is_authenticated %}
+               <span id="usernamenavbar" class="navbar-text"><b>{{user.username}}</b></span>
+               <li class="nav-item">
+                <button class="button is-warning is-outlined is-small"><a id="loginlink" class="nav-link" href="{% url 'log_user_out' %}">Logout</a>
+               </li>
+               {% else %}
+               <li class="nav-item">
+                <button class="button is-warning is-outlined is-small"><a id="loginlink" class="nav-link" href="/login">Login</a></button>
+               </li>
+               {% endif %}
+             </ul>
+         </div>
                     <a href="{% url 'register' %}" class="navbar-item is-size-5 has-text-weight-semibold">
                         Register
                     </a>
@@ -77,14 +73,14 @@
         </div>
     </nav>
 
+    <!-- Base for content -->
     <section class="section">
         <div class="container">
             {% block content %}
             {% endblock %}
-        </div>
+        </div>   
     </section>
 
-    
     <!-- Footer -->
     <footer class="footer">
         <div class="content has-text-centered">
