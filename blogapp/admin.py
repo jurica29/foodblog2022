@@ -3,6 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from .models import Post, Category, Comment
 
+
 # Model for comments
 class CommentItemInline(admin.TabularInline):
     model = Comment
@@ -26,6 +27,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     list_display = ['name', 'post', 'created_at']
 
+# Register models for admin section
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Comment, CommentAdmin)

@@ -52,7 +52,7 @@ def editComment(request, pk):
     comment = Comment.objects.get(id=pk)
     form = CommentForm(instance=comment)
 
-    # print(comment)
+    # Print comment
 
     if request.method == 'POST':
         form = CommentForm(request.POST, instance=comment)
