@@ -14,16 +14,20 @@ from .models import Contact
 from blogapp.models import Post
 
 # create a form from model contact
+
+
 class ContactForm(forms.ModelForm):
     """Contact form view"""
     class Meta:
         model = Contact
         exclude = ('date_created', )
 
+
 def frontpage(request):
     """Home page view"""
     posts = Post.objects.filter(status=Post.ACTIVE)
     return render(request, 'blog/frontpage.html', {'posts': posts})
+
 
 def about(request):
     """Contact page view """
@@ -31,14 +35,15 @@ def about(request):
         form = ContactForm(request.POST)
         if form.is_valid:
             form.save()
-            messages.success(request, 'You have successfully submitted your message!')
+            messages.success(
+                request, 'You have successfully submitted your message!')
 
     form = ContactForm
 
-    context = {'form':form}
+    context = {'form': form}
 
+    return render(request, 'blog/about.html', context)
 
-    return render(request, 'blog/about.html',context)
 
 def robots_txt(request):
     """Robots_txt is used for dealing with bots"""
@@ -47,4 +52,3 @@ def robots_txt(request):
         "Disallow: /admin/",
     ]
     return HttpResponse("\n".join(text), content_type="text/plain")
-

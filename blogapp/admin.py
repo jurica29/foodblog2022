@@ -10,6 +10,8 @@ class CommentItemInline(admin.TabularInline):
     raw_id_fields = ['post']
 
 # Model for admin of posts
+
+
 class PostAdmin(admin.ModelAdmin):
     search_fields = ['title', 'intro', 'body']
     list_display = ['title', 'slug', 'category', 'created_at', 'status']
@@ -18,14 +20,19 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
 # Model for admin of categories
+
+
 class CategoryAdmin(admin.ModelAdmin):
     search_fields = ['title']
     list_display = ['title']
     prepopulated_fields = {'slug': ('title',)}
 
 # Model for admin of comments
+
+
 class CommentAdmin(admin.ModelAdmin):
     list_display = ['name', 'post', 'created_at']
+
 
 # Register models for admin section
 admin.site.register(Post, PostAdmin)

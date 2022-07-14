@@ -24,7 +24,10 @@ def detail(request, category_slug, slug):
             comment.name = request.user.username
             comment.save()
 
-            return redirect('post_detail', slug=slug, category_slug=category_slug)
+            return redirect(
+                'post_detail',
+                slug=slug,
+                category_slug=category_slug)
     else:
         form = CommentForm()
 
@@ -40,9 +43,12 @@ def deleteComment(request, pk):
     if request.method == 'POST':
         comment.delete()
 
-        return redirect('post_detail', comment.post.category.slug, comment.post.slug)
+        return redirect(
+            'post_detail',
+            comment.post.category.slug,
+            comment.post.slug)
 
-    context = {'item':comment}
+    context = {'item': comment}
 
     return render(request, 'blogapp/deleteComment.html', context)
 
@@ -59,9 +65,12 @@ def editComment(request, pk):
         if form.is_valid():
             form.save()
 
-        return redirect('post_detail', comment.post.category.slug, comment.post.slug)
+        return redirect(
+            'post_detail',
+            comment.post.category.slug,
+            comment.post.slug)
 
-    context = {'form':form, 'comment': comment}
+    context = {'form': form, 'comment': comment}
 
     return render(request, 'blogapp/editComment.html', context)
 
@@ -71,17 +80,20 @@ def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     posts = category.posts.filter(status=Post.ACTIVE)
 
-    return render(request, 'blogapp/category.html', {'category': category, 'posts': posts})
+    return render(request, 'blogapp/category.html',
+                  {'category': category, 'posts': posts})
 
 
 def search(request):
     """Function view used for search bar functionality/display"""
-    query = request.GET.get('query','')
+    query = request.GET.get('query', '')
 
 # If query is empty or if it is not aphabetical then warning is displayed.
     if query == "" or not query.isalpha():
         messages.error(request, "Please use a keyword for your search.")
 
-    posts = Post.objects.filter(status=Post.ACTIVE).filter(Q(title__icontains=query) | Q(intro__icontains=query) | Q(body__icontains=query)) 
+    posts = Post.objects.filter(status=Post.ACTIVE).filter(
+        Q(title__icontains=query) | Q(intro__icontains=query) | Q(body__icontains=query))
 
-    return render(request, 'blogapp/search.html', {'posts': posts, 'query': query})
+    return render(request, 'blogapp/search.html',
+                  {'posts': posts, 'query': query})

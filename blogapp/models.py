@@ -4,6 +4,8 @@ from ckeditor.fields import RichTextField
 
 # Describes to database what to store
 # Category is one of the main models
+
+
 class Category(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField()
@@ -11,16 +13,18 @@ class Category(models.Model):
     class Meta:
         ordering = ('title',)
         verbose_name_plural = 'Categories'
-    
+
     # Displaying category names within django admin section
     def __str__(self):
-        return self.title 
+        return self.title
 
     def get_absolute_url(self):
         return '/%s/' % self.slug
 
 # Another model used is "Post"
 # Model for post has two possible post statuses
+
+
 class Post(models.Model):
     ACTIVE = 'active'
     DRAFT = 'draft'
@@ -30,15 +34,21 @@ class Post(models.Model):
         (ACTIVE, 'Active'),
         (DRAFT, 'Draft')
     )
-    
+
     # These are fields used within admin interface
-    category = models.ForeignKey(Category, related_name='posts', on_delete=models.CASCADE)
+    category = models.ForeignKey(
+        Category,
+        related_name='posts',
+        on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     slug = models.SlugField()
     intro = models.TextField()
     body = RichTextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=10, choices=CHOICES_STATUS, default=ACTIVE)
+    status = models.CharField(
+        max_length=10,
+        choices=CHOICES_STATUS,
+        default=ACTIVE)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
 
 # Ordering posts descending by date and time
@@ -47,14 +57,19 @@ class Post(models.Model):
 
 # Displaying post names within django admin area
     def __str__(self):
-        return self.title 
-    
+        return self.title
+
     def get_absolute_url(self):
         return '/%s/%s/' % (self.category.slug, self.slug)
 
 # Comment model consisting of below fields
+
+
 class Comment(models.Model):
-    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
+    post = models.ForeignKey(
+        Post,
+        related_name='comments',
+        on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     email = models.EmailField()
     body = models.TextField()
@@ -63,6 +78,3 @@ class Comment(models.Model):
 # Displaying comment creators names within admin area
     def __str__(self):
         return self.name
-
-
-

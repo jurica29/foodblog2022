@@ -3,6 +3,7 @@ from .forms import RegisterForm
 # Importing login,logout and authentication systems for this app
 from django.contrib.auth import login, logout, authenticate
 
+
 def register(request):
     """View for register page"""
     if request.method == 'POST':
@@ -16,12 +17,13 @@ def register(request):
 
     return render(request, 'registration/register.html', {"form": form})
 
+
 def sign_up(request):
     """View for login page"""
     return render(request, 'registration/login.html', {})
+
 
 def log_out(request):
     """View for log out page"""
     logout(request)
     return render(request, 'registration/logout.html', {})
-    
