@@ -1,7 +1,6 @@
 <!-- Html code for post details page -->
 {% extends 'blog/base.html' %}
 {% load responsive_images %}
-{% load widget_tweaks %}
 {% block title %} {{ post.title }} | {% endblock %}
 
 {% block content %}
@@ -49,7 +48,7 @@
                                         <div class="media-content" id="commentbox">
                                             <strong>{{ comment.name }}</strong> <small>{{ comment.created_at|date:'d-m-Y H:i' }}</small><br>
                                             <br>
-                                            {% render_field form.body rows="5" placeholder="Your comment" class="textarea" %} 
+                                            <div >{{ comment.body }}</div>
                                             <br>
                                             <!-- If user is logged in, user can edit or delete comments via buttons below. -->
                                             {% if user.username == comment.name %}

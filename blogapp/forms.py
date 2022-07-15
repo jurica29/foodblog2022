@@ -10,3 +10,7 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('email', 'body')
+        # Fixing the size of comment box
+        widgets = {
+          'body': forms.Textarea(attrs={'rows':10, 'cols':30}),
+        }
