@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
-if os.path.isfile('env.py'):
+if os.path.isfile("env.py"):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['dailyfoodieblog.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ["dailyfoodieblog.herokuapp.com", "localhost"]
 
 
 # Application definition
@@ -38,14 +38,12 @@ ALLOWED_HOSTS = ['dailyfoodieblog.herokuapp.com', 'localhost']
 # Installed apps include cloudinary, crispy forms, ckeditor, widget tweaks
 # and responsive images
 INSTALLED_APPS = [
-    'blogapp.apps.BlogappConfig',
-    'blog.apps.BlogConfig',
-    'registration.apps.RegistrationConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.sitemaps',
     'cloudinary_storage',
     'django.contrib.staticfiles',
@@ -54,7 +52,13 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'responsive_images',
     'crispy_forms',
+    'blogapp.apps.BlogappConfig',
+    'blog.apps.BlogConfig',
+    'registration.apps.RegistrationConfig',
 ]
+
+# Used for redirecting user to home page after login is completed
+LOGIN_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -142,7 +146,7 @@ MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
@@ -150,6 +154,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Used for redirecting user to home page after login is completed
-LOGIN_REDIRECT_URL = '/'
