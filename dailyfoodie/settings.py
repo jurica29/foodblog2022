@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["dailyfoodieblog.herokuapp.com", "localhost"]
 
@@ -56,6 +56,9 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'registration.apps.RegistrationConfig',
 ]
+
+# Added so that admin page can work
+SITE_ID = 1
 
 # Used for redirecting user to home page after login is completed
 LOGIN_REDIRECT_URL = '/'
