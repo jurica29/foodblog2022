@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['dailyfoodieblog.herokuapp.com', 'localhost']
 
@@ -49,11 +49,11 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    'crispy_forms',
     'cloudinary',
     'ckeditor',
     'widget_tweaks',
     'responsive_images',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -98,7 +98,7 @@ WSGI_APPLICATION = 'dailyfoodie.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 # Password validation
@@ -137,6 +137,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 STATIC_URL = '/static/'
