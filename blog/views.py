@@ -1,24 +1,24 @@
+"""Provides an inbound HTTP request to a Django web application."""
 from django.http.response import HttpResponse
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-# import forms in view
+
 from django import forms
 
-# used to send message
+
 from django.contrib import messages
 
-# import contact model
-from .models import Contact
 
-# Importing post model from models.py
 from blogapp.models import Post
 
-# create a form from model contact
+
+from .models import Contact
 
 
 class ContactForm(forms.ModelForm):
     """Contact form view"""
     class Meta:
+        """The inner class of the model class"""
         model = Contact
         exclude = ('date_created', )
 

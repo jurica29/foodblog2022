@@ -1,13 +1,12 @@
-# Importing forms from django
+"""Importing forms"""
 from django import forms
-# Contact model imported from models
-from .models import Contact
 
-# Contact form used on the template about.html
+from .models import Contact
 
 
 class Contact(forms.ModelForm):
+    """Contact form"""
     class Meta:
-        """Contact form"""
+        """Inner class"""
         model = Contact
         fields = ('fullname', 'message', 'email')

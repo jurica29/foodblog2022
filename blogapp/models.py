@@ -1,41 +1,39 @@
-from django.db import models
-# Rich text field editor imported for easy editing of posts
+"""Importing models from database"""
 from ckeditor.fields import RichTextField
+from django.db import models
 
-# Describes to database what to store
-# Category is one of the main models
+"""Rich text field editor imported for easy editing of posts"""
 
 
 class Category(models.Model):
+    """Importing models from database"""
     title = models.CharField(max_length=255)
     slug = models.SlugField()
 
     class Meta:
+        """Inner class"""
         ordering = ('title',)
         verbose_name_plural = 'Categories'
 
-    # Displaying category names within django admin section
     def __str__(self):
+        """Displays category names within django admin area"""
         return self.title
 
     def get_absolute_url(self):
+        """Importing models from database"""
         return '/%s/' % self.slug
-
-# Another model used is "Post"
-# Model for post has two possible post statuses
 
 
 class Post(models.Model):
+    """Post model"""
     ACTIVE = 'active'
     DRAFT = 'draft'
 
-# There are two possible statuses to filter posts
     CHOICES_STATUS = (
         (ACTIVE, 'Active'),
         (DRAFT, 'Draft')
     )
 
-    # These are fields used within admin interface
     category = models.ForeignKey(
         Category,
         related_name='posts',
@@ -51,21 +49,21 @@ class Post(models.Model):
         default=ACTIVE)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
 
-# Ordering posts descending by date and time
     class Meta:
+        """Ordering posts descending by date and time"""
         ordering = ('-created_at',)
 
-# Displaying post names within django admin area
     def __str__(self):
+        """Displaying post names within django admin area"""
         return self.title
 
     def get_absolute_url(self):
+        """Importing models from database"""
         return '/%s/%s/' % (self.category.slug, self.slug)
-
-# Comment model consisting of below fields
 
 
 class Comment(models.Model):
+    """Comment model"""
     post = models.ForeignKey(
         Post,
         related_name='comments',
@@ -75,6 +73,6 @@ class Comment(models.Model):
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
-# Displaying comment creators names within admin area
     def __str__(self):
+        """Displaying comment creators names within admin area"""
         return self.name

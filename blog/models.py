@@ -1,7 +1,7 @@
+"""Importing models from django database"""
 from django.db import models
 
 
-# Custom model for contact form page consisting of below fields
 class Contact(models.Model):
     """Custom model for contact form"""
     fullname = models.CharField(max_length=100)
@@ -11,6 +11,6 @@ class Contact(models.Model):
         verbose_name="Created on date",
         auto_now_add="True")
 
-# Displaying email contact names within django admin section
     def __str__(self):
+        """Returns email contact names within django admin area"""
         return self.email

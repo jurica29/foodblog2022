@@ -1,4 +1,4 @@
-# Used for search option
+"""Importing q objects important for queries"""
 from django.db.models import Q
 # Used for rendering, redirecting or displaying 404 page
 from django.shortcuts import get_object_or_404, redirect, render
@@ -12,7 +12,7 @@ from .models import Post, Category, Comment
 
 
 def detail(request, category_slug, slug):
-    """ Function view used for detail page functionality/display """
+    """Function view used for detail page functionality/display."""
     post = get_object_or_404(Post, slug=slug, status=Post.ACTIVE)
 
     if request.method == 'POST':
@@ -35,7 +35,7 @@ def detail(request, category_slug, slug):
 
 
 def deleteComment(request, pk):
-    """Function view used for deleting comment"""
+    """Function view used for deleting comment."""
     comment = Comment.objects.get(id=pk)
 
     print(comment)
@@ -54,7 +54,7 @@ def deleteComment(request, pk):
 
 
 def editComment(request, pk):
-    """Function view used for editing comment"""
+    """Function view used for editing comment."""
     comment = Comment.objects.get(id=pk)
     form = CommentForm(instance=comment)
 
@@ -76,7 +76,7 @@ def editComment(request, pk):
 
 
 def category(request, slug):
-    """Function view used for category display/functionality"""
+    """Function view used for category display/functionality."""
     category = get_object_or_404(Category, slug=slug)
     posts = category.posts.filter(status=Post.ACTIVE)
 
@@ -85,15 +85,16 @@ def category(request, slug):
 
 
 def search(request):
-    """Function view used for search bar functionality/display"""
+    """Function view used for search bar functionality/display."""
     query = request.GET.get('query', '')
 
-# If query is empty or if it is not aphabetical then warning is displayed.
     if query == "" or not query.isalpha():
         messages.error(request, "Please use a keyword for your search.")
 
     posts = Post.objects.filter(status=Post.ACTIVE).filter(
-        Q(title__icontains=query) | Q(intro__icontains=query) | Q(body__icontains=query))
+        Q(title__icontains=query) |
+        Q(intro__icontains=query) |
+        Q(body__icontains=query))
 
     return render(request, 'blogapp/search.html',
                   {'posts': posts, 'query': query})

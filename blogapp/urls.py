@@ -1,9 +1,9 @@
+"""Used for routing URLs appropriately"""
 from django.urls import path
 
 from . import views
 
-# URL configuration for search bar, edit comment page, delete comment page
-# detail page and category detail
+
 urlpatterns = [
     path(
         'search/',
