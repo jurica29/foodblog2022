@@ -1,45 +1,33 @@
-<!-- Contact page -->
-{% extends 'blog/base.html' %}
-{% load static %}
-{% load widget_tweaks %}
-
-{% block title %} Contact Me | {% endblock %}
-
-{% block content %}
+<!-- Contact page --> 
+{% extends 'blog/base.html' %} 
+{% load static %} 
+{% load widget_tweaks %} 
+{% block title %} Contact Me | {% endblock %} {% block content %} 
 <div class="container my-5 mt-5 mx-5 px-5">
     <h2 id="contactme" class="title is-2 is-capitalized has-text-centered">Contact Me</h2>
-       <!-- Contact me form implemented within customised contact page template  -->
-       <form action="" method="POST">
-        {% for message in messages %}
-        <p class="has-text-centered">{{ message }}</p>
-        {% endfor %}
-        {% csrf_token %}
-        <!-- Name input area  -->
-        <div class="field">
-            <label for="name" class="label is-size-4 has-text-weight-light"></label>
-            <div class="control has-icons-left">
-            <span class="icon is-left">
+    <!-- Contact me form implemented within customised contact page template  -->
+    <form action="" method="POST"> {% for message in messages %} <p class="has-text-centered">{{ message }}</p> {% endfor %} {% csrf_token %}
+      <!-- Name input area  -->
+      <div class="field">
+        <label for="name" class="label is-size-4 has-text-weight-light"></label>
+        <div class="control has-icons-left">
+          <span class="icon is-left">
             <i class="fa fa-user"></i>
-            </span>
-            {% render_field form.fullname class="input" placeholder="Your name" %}
-            </div>
+          </span> {% render_field form.fullname class="input" placeholder="Your name" %}
         </div>
-        <div class="field">
-            <!-- Email input area  -->
-            <label for="email" class="label is-size-4 has-text-weight-light"></label>
-            <div class="control has-icons-left">
-            <span class="icon is-left">
+      </div>
+      <div class="field">
+        <!-- Email input area  -->
+        <label for="email" class="label is-size-4 has-text-weight-light"></label>
+        <div class="control has-icons-left">
+          <span class="icon is-left">
             <i class="fa fa-envelope"></i>
-            </span>
-                {% render_field form.email class="input" placeholder="your@email.com" %}
-            </div>
+          </span> {% render_field form.email class="input" placeholder="your@email.com" %}
         </div>
-        <div class="field">
-            <!-- Message area  -->
-            {% render_field form.message rows="10" placeholder="Your message" class="textarea" %}
-        </div>
-        <button id="submitcontactmessage" type="submit" class="button is-warning is-size-5">Submit</button>
+      </div>
+      <div class="field">
+        <!-- Message area  --> {% render_field form.message rows="10" placeholder="Your message" class="textarea" %}
+      </div>
+      <button id="submitcontactmessage" type="submit" class="button is-warning is-size-5">Submit</button>
     </form>
-</div>      
-{% endblock %}
-
+  </div> {% endblock %}

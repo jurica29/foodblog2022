@@ -1,51 +1,43 @@
 <!-- Home page -->
-<!-- Below code extends this html file across other templates -->
-{% extends 'blog/base.html' %}
-{% load responsive_images %}
-{% block title %} Home | {% endblock %}
-
-{% block content %}
+<!-- Below code extends this html file across other templates --> {% extends 'blog/base.html' %} {% load responsive_images %} {% block title %} Home | {% endblock %} {% block content %}
 <!-- Blog title -->
 <!-- Categories names displayed below title -->
-    <div id="categories" class="container">
-        <div class="mb-6 pb-3 columns is-multiline">
-          <div class="column is-12 is-6-desktop mx-auto has-text-centered">
-            <h2 id="blogtitle" class="mb-4 is-size-1 is-size-3-mobile has-text-weight-bold">Daily Foodie</h2>
-            <p class="has-text-weight-bold subtitle has-text-grey mb-5">Welcome to my food blog! <br> Enjoy reading some foodie stories or just trying out new recipes.</p>
-            <div class="buttons is-centered">
-                <button class="categorybuttons button is-yellow is-rounded"><a href="/blogapp/recipes/" class="category">Recipes</a></button>
-                <button class="categorybuttons button is-yellow is-rounded"><a href="/blogapp/FoodAroundtheWorld/" class="category">Food Around the World</a></button>
+<div id="categories" class="container">
+    <div class="mb-6 pb-3 columns is-multiline">
+      <div class="column is-12 is-6-desktop mx-auto has-text-centered">
+        <h2 id="blogtitle" class="mb-4 is-size-1 is-size-3-mobile has-text-weight-bold">Daily Foodie</h2>
+        <p class="has-text-weight-bold subtitle has-text-grey mb-5">Welcome to my food blog! <br> Enjoy reading some foodie stories or just trying out new recipes. </p>
+        <div class="buttons is-centered">
+          <button class="categorybuttons button is-yellow is-rounded">
+            <a href="/blogapp/recipes/" class="category">Recipes</a>
+          </button>
+          <button class="categorybuttons button is-yellow is-rounded">
+            <a href="/blogapp/FoodAroundtheWorld/" class="category">Food Around the World</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Main section used for displaying posts and images generated with django framework -->
+  <section id="mainbody" class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <section class="section">
+          <div class="columns">
+            <div class="column is-8 is-offset-2">
+              <!-- Looping over posts and displaying them accordingly --> {% for post in posts %} <div class="content is-medium">
+                <a href="{% url 'post_detail' post.category.slug post.slug %}">
+                  <h2 class="subtitle is-4">{{ post.created_at|date:'d-m-Y H:i' }}</h2>
+                  <h1 class="title">{{ post.title }}</h1>
+                  <p>{{ post.intro }}</p> {% if post.image %} <figure class="image">
+                    <!-- Image is displayed via this url -->
+                    <img class="img-fluid" src="{{ post.image.url }}">
+                  </figure> {% endif %}
+                </a>
+              </div> {% endfor %}
             </div>
           </div>
-        </div>
+        </section>
+      </div>
     </div>
-    <!-- Main section used for displaying posts and images generated with django framework -->
-    <section id="mainbody" class="hero">
-        <div class="hero-body">
-            <div class="container">
-                <section class="section">
-                    <div class="columns">
-                        <div class="column is-8 is-offset-2">
-                            <!-- Looping over posts and displaying them accordingly -->
-                            {% for post in posts %}
-                                <div class="content is-medium">
-                                    <a href="{% url 'post_detail' post.category.slug post.slug %}">
-                                        <h2 class="subtitle is-4">{{ post.created_at|date:'d-m-Y H:i' }}</h2>
-                                        <h1 class="title">{{ post.title }}</h1>
-                                        <p>{{ post.intro }}</p>
-                                        {% if post.image %}
-                                        <figure class="image">
-                                            <!-- Image is displayed via this url -->
-                                            <img class="img-fluid" src="{{ post.image.url }}">
-                                        </figure>
-                                        {% endif %}
-                                    </a>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </section>
-{% endblock %}
+  </section> {% endblock %}

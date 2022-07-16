@@ -6,7 +6,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    """Importing models from database"""
+    """Category model with below fields"""
     title = models.CharField(max_length=255)
     slug = models.SlugField()
 
@@ -16,11 +16,11 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     def __str__(self):
-        """Displays category names within django admin area"""
+        """Displaying title of the category"""
         return self.title
 
     def get_absolute_url(self):
-        """Importing models from database"""
+        """Slug rendering"""
         return '/%s/' % self.slug
 
 

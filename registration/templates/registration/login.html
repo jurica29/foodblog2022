@@ -2,54 +2,42 @@
 {% load crispy_forms_tags %} {% block content %}
 {% load widget_tweaks %}
 <!-- Login page -->
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-          <form method="post">
-          <!-- A CSRF token is a secure random token that is used to prevent CSRF attacks. -->
-        	{% csrf_token %}
-          <!-- Error message field if user doesn't enter username or password properly -->
-          {% if form.non_field_errors %}
-          <div class="notification is-danger">
-          <ul class='form-errors'>
-              {% for error in form.non_field_errors %}
-                  <li>{{ error }}</li>
-              {% endfor %}
-          </ul>
-          </div>
-          {% endif %}
+<div class="hero-body">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+        <form method="post">
+          <!-- A CSRF token is a secure random token that is used to prevent CSRF attacks. --> {% csrf_token %}
+          <!-- Error message field if user doesn't enter username or password properly --> {% if form.non_field_errors %} <div class="notification is-danger">
+            <ul class='form-errors'> {% for error in form.non_field_errors %} <li>{{ error }}</li> {% endfor %} </ul>
+          </div> {% endif %}
           <!-- Username field -->
-            <div class="field">
-              <label for="" class="label">Email</label>
-              <div class="control has-icons-left">
-                {% render_field form.username class="input" placeholder="your@email.com" %}
-                <span class="icon is-small is-left">
-                  <i class="fa fa-envelope"></i>
-                </span>
-              </div>
+          <div class="field">
+            <label for="" class="label">Email</label>
+            <div class="control has-icons-left"> {% render_field form.username class="input" placeholder="your@email.com" %} <span class="icon is-small is-left">
+                <i class="fa fa-envelope"></i>
+              </span>
             </div>
-             <!-- Password field -->
-            <div class="field">
-              <label for="" class="label">Password</label>
-              <div class="control has-icons-left">
-                <span class="icon is-small is-left">
-                  <i class="fa fa-lock"></i>
-                </span>
-                <div>{% render_field form.password class="input" placeholder="password" %}</div>
-              </div>
+          </div>
+          <!-- Password field -->
+          <div class="field">
+            <label for="" class="label">Password</label>
+            <div class="control has-icons-left">
+              <span class="icon is-small is-left">
+                <i class="fa fa-lock"></i>
+              </span>
+              <div>{% render_field form.password class="input" placeholder="password" %}</div>
             </div>
-             <!-- Login button -->
-            <div class="field">
-              <button class="button is-warning">
-                Login
-              </button>
-            </div>
-          </form>
-           <!-- Message for users who don'thave account -->
-          <p>Don't have an account? Create one <a href="{% url 'register' %}">Here</a>!</p>
-        </div>
+          </div>
+          <!-- Login button -->
+          <div class="field">
+            <button class="button is-warning"> Login </button>
+          </div>
+        </form>
+        <!-- Message for users who don'thave account -->
+        <p>Don't have an account? Create one <a href="{% url 'register' %}">Here</a>! </p>
       </div>
     </div>
   </div>
+</div>
 {% endblock %}

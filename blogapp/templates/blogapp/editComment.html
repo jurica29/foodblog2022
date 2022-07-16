@@ -5,19 +5,18 @@
 
 <p id="editpage"> Edit the comment below: </p>
 <div id="editingcomment">
-<form action="" method="POST">
-	{% csrf_token %}
-<div>{% render_field form.email class="input" placeholder="your@email.com" %}</div>
-<div>{% render_field form.body rows="10" placeholder="Your message" class="textarea" %}</div>
-<div id="buttonbox">
-<div id="cancelbut">
-<button class="button is-danger"><a id="cancel" href="{% url 'post_detail' comment.post.category.slug comment.post.slug %}">Cancel</a>
-</div>
-<div id="submitbut">
-<button class="button is-success" id="submit">Submit</button>
-</div>
-</div>
-</form>
+  <form action="" method="POST"> {% csrf_token %} <div>{% render_field form.email class="input" placeholder="your@email.com" %}</div>
+    <div>{% render_field form.body rows="10" placeholder="Your message" class="textarea" %}</div>
+    <div id="buttonbox">
+      <div id="cancelbut">
+        <button class="button is-danger">
+          <a id="cancel" href="{% url 'post_detail' comment.post.category.slug comment.post.slug %}">Cancel</a>
+      </div>
+      <div id="submitbut">
+        <button class="button is-success" id="submit">Submit</button>
+      </div>
+    </div>
+  </form>
 </div>
 
 {% endblock %}
