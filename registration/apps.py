@@ -1,8 +1,8 @@
+"""Importing app configuration"""
 from django.apps import AppConfig
-
-# App configuration for registration app
 
 
 class RegistrationConfig(AppConfig):
+    """Setting default auto fields to bigautofield"""
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'registration'

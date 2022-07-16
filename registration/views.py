@@ -1,7 +1,8 @@
+"""Importing redirect, render and reverse"""
+from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import redirect, render, reverse
 from .forms import RegisterForm
-# Importing login,logout and authentication systems for this app
-from django.contrib.auth import login, logout, authenticate
+
 
 
 def register(request):
