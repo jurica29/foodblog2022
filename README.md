@@ -18,7 +18,7 @@ The intention is to create a community of "foodies" who would share their experi
 **First time site visitors would like to**
 
  * Easily navigate on the site.
- * Read posts and see the options to register in order to leave their comments.
+ * Read posts and see the options to sign up/login in order to leave their comments.
 
 **Returning registered users would like**
 
@@ -48,3 +48,41 @@ Issue No. | Title | User story | Acceptance criteria | Implemented
 #09 | Login possibility | As a Site User I can easily login so that I can view, submit, edit or delete comments. | Acceptance Criteria: Site user can log in easily which triggers permissions for submitting, editing and deleting comments. | Yes
 #10 | Logout possibility | As a Site User I can easily logout so that I can safely use my credentials when I wish. | Acceptance Criteria: Site user can easily log off. | Yes
 #11 | Search for posts | As a Site User I can search for keywords so that I can easily find a desired post. | Acceptance Criteria: Site user can search for a specific keyword within posts. | Yes
+
+### STRATEGY
+
+* Focus:
+
+  The focus of this project is to provide recipes and interesting stories about food from around the world.
+
+* Definition:
+
+  Daily Foodie is a blog web site for visitors who want to find some new recipes or just read "foodie" stories.
+
+* Value:
+
+  The registered users can leave comments and see other users' comments below all posts.
+
+**Agile software development**
+
+Throughout development process of this site, agile development approach was taken using Trello Kanban which was transferred to Github due to technical issues (not fully transferred as I've could not save some of the features that I've created with Trello).
+
+### SCOPE
+
+**Features:**
+
+  **Navigation menu** - The navigation menu is clear and consistent for all visitors and users.
+
+  **Home page** - Home page enables visitors/users to easily switch between 2 categories of posts or use navigation menu functions.
+
+  **Register/Login page** - Site visitors can register at register page or sign in at login page.
+
+  **2 Category pages** -  Site visitors can access either "Recipes" or "Food Around the World" category with list of posts.
+
+  **Post detail page** -  Any visitor can read posts, while only registered/logged in users can submit, edit or delete comments.
+
+  **Edit/Delete comment page** - Registered users can edit/delete their own comments.
+
+  **Contact page** – Any site visitor can contact the blog admin through this form.
+
+  **Admin page** - This page is restricted to the site administrator and is used for the full control of all blog features.
