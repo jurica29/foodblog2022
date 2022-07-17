@@ -86,3 +86,11 @@ Throughout development process of this site, agile development approach was take
   **Contact page** – Any site visitor can contact the blog admin through this form.
 
   **Admin page** - This page is restricted to the site administrator and is used for the full control of all blog features.
+
+   **Planned Features:**
+  * The site should be responsive, intuitive and easy to navigate on all devices.
+  * Home page should provide easy navigation and access for both post categories.
+  * Users should be able to easily register/login/logout.
+  * Only registered users can view, submit, edit and delete comments.
+  * Unregistered users can view the posts without comments.
+  * Any user can contact site admin through contact page.
