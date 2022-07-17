@@ -43,4 +43,8 @@ urlpatterns = [
     path('', include("django.contrib.auth.urls")),
 
     path('', frontpage, name='frontpage'),
+
 ]
+
+handler404 = 'dailyfoodie.views.handler404'
+handler500 = 'dailyfoodie.views.handler500'

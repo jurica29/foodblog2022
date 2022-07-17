@@ -1,12 +1,12 @@
 """Importing q objects important for queries"""
 from django.db.models import Q
-# Used for rendering, redirecting or displaying 404 page
+
 from django.shortcuts import get_object_or_404, redirect, render
 
-# used to send message
+
 from django.contrib import messages
 
-# Importing comment form as well as post and category field
+
 from .forms import CommentForm
 from .models import Post, Category, Comment
 
