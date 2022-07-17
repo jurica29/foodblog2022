@@ -85,6 +85,8 @@ Throughout development process of this site, agile development approach was take
 
   **Contact page** – Any site visitor can contact the blog admin through this form.
 
+  **Search page** – Any site visitor can search posts by using a keyword.
+
   **Admin page** - This page is restricted to the site administrator and is used for the full control of all blog features.
 
    **Planned Features:**
@@ -94,3 +96,9 @@ Throughout development process of this site, agile development approach was take
   * Only registered users can view, submit, edit and delete comments.
   * Unregistered users can view the posts without comments.
   * Any user can contact site admin through contact page.
+
+### SKELETON
+  **Wireframe:**
+  The basic mockup for this site was done on Balsamiq Wireframes and can be viewed below
+  
+  [Wireframes folder](https://github.com/jurica29/foodblog2022/blob/main/static/images/wireframes)
