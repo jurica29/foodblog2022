@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Contact(models.Model):
-    """Custom model for contact form"""
+    """Custom model for contact form with customised fields below"""
     fullname = models.CharField(max_length=100)
     email = models.EmailField()
     message = models.TextField(max_length=1000)

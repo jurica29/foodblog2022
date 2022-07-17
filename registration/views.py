@@ -4,7 +4,6 @@ from django.shortcuts import redirect, render, reverse
 from .forms import RegisterForm
 
 
-
 def register(request):
     """View for register page"""
     if request.method == 'POST':
