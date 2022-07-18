@@ -163,8 +163,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 GRAPH_MODELS = {
-  'all_applications': False,
-  'group_models': True,
-  'app_labels': ["blog", "blogapp", "registration"],
+    'all_applications': False,
+    'group_models': True,
+    'app_labels': ["blog", "blogapp", "registration"],
 }
-

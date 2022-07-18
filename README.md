@@ -95,7 +95,7 @@ Throughout development process of this site, agile development approach was take
   * Users should be able to easily register/login/logout.
   * Only registered users can view, submit, edit and delete comments.
   * Unregistered users can view the posts without comments.
-  * Any user can contact site admin through contact page.
+  * Any site visitor can contact site admin through contact page.
 
 ### SKELETON
   **Wireframe:**
@@ -119,3 +119,22 @@ Throughout development process of this site, agile development approach was take
   **Typography:**
 
  Default fonts were used throughout the website.
+
+ ### Technologies
+ 
+  * HTML5
+  * CSS3
+  * Python
+  * Django
+  * Cloudinary
+  * Bulma
+  * FontAwesome
+  * GitPod
+  * GitHub
+  * DevTools
+  * Heroku
+
+  ## Existing Features
+ 
+ ### Elements on every page
+
