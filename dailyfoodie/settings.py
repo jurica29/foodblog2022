@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'responsive_images',
     'crispy_forms',
+    "django_extensions",
     'blogapp.apps.BlogappConfig',
     'blog.apps.BlogConfig',
     'registration.apps.RegistrationConfig',
@@ -160,3 +161,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+GRAPH_MODELS = {
+  'all_applications': False,
+  'group_models': True,
+  'app_labels': ["blog", "blogapp", "registration"],
+}
+

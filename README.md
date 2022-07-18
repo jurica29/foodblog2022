@@ -102,3 +102,20 @@ Throughout development process of this site, agile development approach was take
   The basic mockup for this site was done on Balsamiq Wireframes and can be viewed below
   
   [Wireframes folder](https://github.com/jurica29/foodblog2022/tree/main/static/images/wireframes)
+
+  **Database:**
+
+
+  <details><summary>Database schema</summary>
+      <img src="static/images/models.png" width="500">
+      </details>
+
+
+## SURFACE
+  **Colour Pallette:**
+
+  ![Colour Palette](static/images/colors.jpg)
+  	
+  **Typography:**
+
+ Default fonts were used throughout the website.
