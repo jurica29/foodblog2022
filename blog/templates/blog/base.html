@@ -52,9 +52,9 @@
                   <b>{{user.username}}</b>
                 </span>
                 <li class="nav-item">
-                  <a class="button is-warning is-outlined is-small" id="loginlink" class="nav-link" href="{% url 'log_user_out' %}">Logout</a>
+                  <a class="button is-warning is-outlined is-small nav-link" id="loginlink" href="{% url 'log_user_out' %}">Logout</a>
                 </li> {% else %} <li class="nav-item">
-                  <a class="button is-warning is-outlined is-small"id="loginlink" class="nav-link" href="/login">Login</a>
+                  <a class="button is-warning is-outlined is-small nav-link" id="loginlink" href="/login">Login</a>
                 </li> {% endif %}
               </ul>
             </div>
