@@ -16,8 +16,53 @@ Issue No. | Title | Acceptance criteria | Manual test carried out
 
 * Manual testing was performed to ensure that website is fully working without any issues.
 
-Each page has been manually tested to ensure that the links and the contents are properly placed and functioning, and that all data entry is appropriately handled as expected. Restricted areas access has also been thoroughly tested.
+Each page has been manually tested to ensure that the links and the contents are properly placed and functioning, and that all data entry is appropriately handled as expected. 
+Restricted areas access has also been thoroughly tested.
 
 All buttons and links were manually tested to ensure full functionality across the website.
+
+## Manual testing on each page
+  
+#### Home page
+
+**Users who are logged in**  
+
+Ensure that users can see their username in the upper right corner of the navbar and that they can click on "logout" no matter where they are within the website.
+All the links and buttons have been manually tested across various devices.
+
+#### Post Detail page
+
+**For site visitor who has not logged in**
+
+Ensure that they cannot see, leave, edit or delete comments. 
+Ensure that links for easing the access to "log in" and "register" areas are functioning properly below posts.
+
+**For registered and logged in users**
+
+Ensure that users have full CRUD functionality enabled for commenting below posts.
+
+#### Delete/Edit Comment page
+
+**For registered and logged in users**
+
+Ensure that both buttons perform the willing functions, whether to submit the change or just to return to the previous page.
+
+#### Contact page
+
+**For both users and site visitors**
+
+Ensure that both users and visitors can access the page and submit their messages easily.
+Ensure that notification informs users that they were successful in submitting a message.
+
+#### Register page
+
+Ensure that validations are in place and that user cannot register the same username twice.
+
+#### Login option
+
+Ensure that upon successful login, the user is redirected to home page where they can see their username in the upper right corner of the screen (navbar).
+
+#### Logout page
+Ensure logout message shows up.
 
 [Link Checker](https://validator.w3.org/checklink) was used to ensure that there is no broken link within the website

@@ -278,3 +278,23 @@ The site is tested to ensure all pages are displayed appropriately in all screen
 ### Known error present:
 
   No known errors present at the time of submission
+
+###  Validating code - Python, HTML, CSS, JS
+
+All the .py files are validated in the PEP8 online validator.
+
+<details><summary>The result screenshot of one of the file</summary> <img src="static/images/pythonvalidation.jpg"></details> 
+
+At the time of project submission, there were no errors detected in the PEP8 validator.
+
+No errors were returned when passing through the official W3C validator.
+
+<details><summary>The result screenshot - html</summary> <img src="static/images/htmlvalidation.jpg"></details> 
+
+No errors were found when passing through the official (Jigsaw) validator.
+
+<details><summary>The result screenshot - css</summary> <img src="static/images/cssvalidation.jpg"></details> 
+
+Two errors were found when passing JS code through the validator, however they do not impede any functionality.
+
+<details><summary>The result screenshot - JS</summary> <img src="static/images/jsvalidation.jpg"></details> 
