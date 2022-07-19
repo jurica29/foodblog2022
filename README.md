@@ -287,7 +287,7 @@ All the .py files are validated in the PEP8 online validator.
 
 At the time of project submission, there were no errors detected in the PEP8 validator (this excludes "env.py").
 
-No errors were returned when passing through the official W3C validator.
+No errors were returned when passing through the official W3C validator, just several warnings due to django generated elements.
 
 <details><summary>The result screenshot - html</summary> <img src="static/images/htmlvalidation.jpg"></details> 
 
