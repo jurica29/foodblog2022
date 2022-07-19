@@ -298,3 +298,97 @@ No errors were found when passing through the official (Jigsaw) validator.
 Two warnings were found when passing JS code through the validator, however they do not impede any functionality.
 
 <details><summary>The result screenshot - JS</summary> <img src="static/images/jsvalidation.jpg"></details> 
+
+## Setting up Django environment.
+
+Following additional packages are installed to create this site by using pip3 install
+  
+  * gunicorn
+  * psycopg2
+  * dj3-cloudinary-storage
+  * django-crispy-forms
+  * richtexteditor
+
+## Deployment
+
+1. In the Heroku dashboard, click "new", then enter the app name and specify the region.
+
+2. In the Add-on section in the resources tab, search postgres, then select Heroku Postgres and submit order from button in the popup window.
+
+3. In the setting tab, click on Reveal Config Vars button then copy the value for DATABASE_URL key.
+
+4. Create env.py directly under the repo directory same lavel as manage.py and make sure the file name is included in .gitignore as this is a setting for local development site in Gitpod. 
+Heroku Config vars need to be set accordingly including DATABASE_URL and SECRET_KEY
+
+5. In setting.py file include the following code:
+
+    import os
+    import dj_database_url
+    if os.path.isfile('env.py'):
+        import env
+    modify SECRET_KEY line to SECRET_KEY = os.
+    environ.get('SECRET_KEY')
+
+    Replace DATABASES as
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+
+6. In the Gitpod terminal, migrate the change by
+"python3 manage.py migrate". Check the resource tab in heroku and choose 
+Heroku Postgres, then ensure the changes are reflected in the database.
+
+7. Login to Cloudinary and copy the API Environment variable and paste in "env.py" and also Config Vars in Heroku.
+
+8. DISABLE_COLLECTSTATIC set to 1 in Config Vars in Heroku as the initial deployment does not contain static files yet.
+
+9. In settings.py configure followings:
+ 
+    * Add 'cloudinary_storage', before 'django.contrib.staticfiles', and 'cloudinary' after it.
+
+    * Set STATICFILES_DIRS, STATICFILES_DIRS, STATIC_ROOT, MEDIA_URL and DEFAULT_FILE_STORAGE so that Django can use the directories appropriately.
+
+    * Set TEMPLATES_DIR just below BASE_DIR and insert TEMPLATES_DIR in TEMPLATES array
+    'DIRS': []
+
+    * Set ALLOWED_HOSTS array as 'dailyfoodie.herokuapp.com', 'localhost'
+
+10. Create Procfile with the contents 
+
+    web: gunicorn dailyfoodie.wsgi
+
+11. In the deployment tab in Heroku page, connect to GitHub and search for the repository then Connect.
+
+    Click on Deploy Branch
+
+## Credits
+
+* Contents
+  
+  Posts were taken from [Martha Stewarts' website](https://www.marthastewart.com/) and [Rick Steves' website](https://www.ricksteves.com/)
+
+* Coding
+  
+  [Django documentation](https://docs.djangoproject.com/en/4.0/)
+
+  [Django tutorial by Codemy.com](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&ab_channel=Codemy.com)
+
+  [Django tutorial by Net Ninja](https://www.youtube.com/watch?v=n-FTlQ7Djqc&list=PL4cUxeGkcC9ib4HsrXEYpQnTOTZE1x0uc&ab_channel=TheNetNinja) 
+
+* Images 
+
+  [Pixabay](https://pixabay.com/)
+
+  [Shutterstock](https://www.shutterstock.com/discover/10-free-stock-images?coupon_code=pick10free&kw=free%20images&c3apidt=p52922776530&gclid=CjwKCAjwrNmWBhA4EiwAHbjEQH8hpnbf_T7tK8oVwpEbXm6kG6Gsv84nJGPe6eD955Trnyq0gQH3KBoCHIEQAvD_BwE&gclsrc=aw.ds)
+
+## Acknowledgements
+
+-	To the Code Institute course material, as the basis of all my knowledge is from here.
+-	To the Slack community as I have used the different channels to find answers to problems!
+- Stack Overflow as a valuable resource for solving a couple of issues.
+- To the Tutor support for all their assistance.
+
+I would also like to thank to:
+
+-	My mentor Rahul, for his time, support and guidance throughout our video calls.
+-	My wife Maja, for all her support and patience.

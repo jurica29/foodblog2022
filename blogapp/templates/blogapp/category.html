@@ -18,9 +18,9 @@
                 <a href="{% url 'post_detail' post.category.slug post.slug %}">
                   <h2 class="subtitle is-4">{{ post.created_at|date:'d-m-Y H:i' }}</h2>
                   <h1 class="title">{{ post.title }}</h1>
-                  <p>{{ post.intro }}</p> {% if post.image %} <figure class="image">
+                  <p>{{ post.intro }}</p> {% if post.image %} <figure class="image" alt="post image">
                     <!-- Image displayed here -->
-                    <img src="{{ post.image.url }}">
+                    <img alt="post image" src="{{ post.image.url }}">
                   </figure> {% endif %}
                 </a>
               </div> {% empty %}

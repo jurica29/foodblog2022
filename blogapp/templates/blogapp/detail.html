@@ -17,9 +17,9 @@
               <h1 class="title">{{ post.title }}</h1>
               <p>
                 <strong>{{ post.intro }}</strong>
-              </p> {% if post.image %} <figure class="image">
+              </p> {% if post.image %} <figure class="image" alt="post image">
                 <!-- Image displayed via this url. -->
-                <img src="{{ post.image.url }}">
+                <img alt="post image" src="{{ post.image.url }}">
               </figure> {% endif %}
               <!-- "Safe" used for rich text editor to function properly for text writing/editing. -->
               <p>{{ post.body|safe }}</p>
