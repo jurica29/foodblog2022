@@ -285,7 +285,7 @@ All the .py files are validated in the PEP8 online validator.
 
 <details><summary>The result screenshot of one of the file</summary> <img src="static/images/pythonvalidation.jpg"></details> 
 
-At the time of project submission, there were no errors detected in the PEP8 validator.
+At the time of project submission, there were no errors detected in the PEP8 validator (this excludes "env.py").
 
 No errors were returned when passing through the official W3C validator.
 
@@ -295,6 +295,6 @@ No errors were found when passing through the official (Jigsaw) validator.
 
 <details><summary>The result screenshot - css</summary> <img src="static/images/cssvalidation.jpg"></details> 
 
-Two errors were found when passing JS code through the validator, however they do not impede any functionality.
+Two warnings were found when passing JS code through the validator, however they do not impede any functionality.
 
 <details><summary>The result screenshot - JS</summary> <img src="static/images/jsvalidation.jpg"></details> 
