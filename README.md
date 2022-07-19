@@ -162,7 +162,7 @@ Throughout development process of this site, agile development approach was take
     <img src="static/images/footer.jpg" width="500">
     </details>
   
-  * Home/Landing Page
+  * Home/Landing page
 
     Home page immediately enables visitors and users to pick between 2 categories of posts or just to scroll through them immediately.
     
@@ -178,7 +178,7 @@ Throughout development process of this site, agile development approach was take
     <img src="static/images/recipepage.jpg" width="500">
     </details>
 
-  * Comment Section
+  * Comment section
 
     Comment section below post is restricted to registered users. They can see option to submit, edit or delete their comments.
 
@@ -202,7 +202,7 @@ Throughout development process of this site, agile development approach was take
     <img src="static/images/deletecomment.jpg" width="500">
     </details>
 
-  * Search Page
+  * Search page
 
     Every site visitor can search for one keyword that can take them to the desired post.
 
@@ -210,7 +210,7 @@ Throughout development process of this site, agile development approach was take
     <img src="static/images/search.jpg" width="500">
     </details>
 
-  * Register Page
+  * Register page
 
     This page can be opened via the register button in the navigation bar.
     New site visitors are simply asked to enter username, email address, password and password confirmation to register for the use of this site. 
@@ -220,7 +220,7 @@ Throughout development process of this site, agile development approach was take
     <img src="static/images/register.jpg" width="500">
     </details>
 
-  * Login Page
+  * Login page
 
     Registered and returning users can use the login button to open the login page and supply their username and password to login.
     On successful login, users will be redirected to the home page and they will be aware of it due to login username displayed in the upper right navbar area.
@@ -233,7 +233,7 @@ Throughout development process of this site, agile development approach was take
     <img src="static/images/logged.jpg" width="500">
     </details>
 
-  * Contact Page
+  * Contact page
 
     Any site visitor can use contact page to reach out to the site owner.
     There are three fields that user needs to fill in: name, email and message.
@@ -257,4 +257,16 @@ Throughout development process of this site, agile development approach was take
 
   * Like/Unlike comments
   * Email authentication
-  * User-created recipe reviews/posts
+  * Site pagination
+
+## Testing
+
+### Responsiveness 
+
+The site is tested to ensure all pages are displayed appropriately in all screen sizes.
+
+### Manual and Automated testing
+
+  Both manual and automated testing were carried out to ensure the site works as intended. Testing document can be found here [Link to the testing document](static/documentation/TESTING.md)
+
+
