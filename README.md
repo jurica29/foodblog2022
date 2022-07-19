@@ -95,7 +95,7 @@ Throughout development process of this site, agile development approach was take
   * Users should be able to easily register/login/logout.
   * Only registered users can view, submit, edit and delete comments.
   * Unregistered users can view the posts without comments.
-  * Any site visitor can contact site admin through contact page.
+  * Any user can contact site admin through contact page.
 
 ### SKELETON
   **Wireframe:**
@@ -120,21 +120,141 @@ Throughout development process of this site, agile development approach was take
 
  Default fonts were used throughout the website.
 
- ### Technologies
- 
-  * HTML5
-  * CSS3
+### Technologies
+
+  * HTML5 
+  * CSS3 
   * Python
-  * Django
-  * Cloudinary
+  * Django 
+  * Cloudinary 
   * Bulma
-  * FontAwesome
-  * GitPod
-  * GitHub
-  * DevTools
-  * Heroku
-
-  ## Existing Features
+  * FontAwesome 
+  * Google Fonts
+  * GitPod 
+  * GitHub 
+  * DevTools 
+  * Heroku 
  
- ### Elements on every page
+## Existing Features
 
+ ### Elements on every page
+ 
+   * Navbar
+
+      There is a consistent navbar present for all pages within the site.
+      Navbar has the site name to the left, which is clickable and returns to home page.
+
+      * Login, Register and Contact
+
+      <details><summary>Navbar</summary>
+      <img src="static/images/navbar.jpg" width="500">
+      </details>
+
+      <details><summary>Navbar mobile</summary>
+      <img src="static/images/mobile.jpg" width="500">
+      </details>
+
+  * Footer
+
+    There is a consistent footer present for all pages within the site, containing three social media icons.
+
+    <details><summary>Footer</summary>
+    <img src="static/images/footer.jpg" width="500">
+    </details>
+  
+  * Home/Landing Page
+
+    Home page immediately enables visitors and users to pick between 2 categories of posts or just to scroll through them immediately.
+    
+    <details><summary>Home</summary>
+    <img src="static/images/home.jpg" width="500">
+    </details>
+
+  * Post Detail page
+
+    Every site visitor can enter and read posts.
+
+    <details><summary>Post detail</summary>
+    <img src="static/images/recipepage.jpg" width="500">
+    </details>
+
+  * Comment Section
+
+    Comment section below post is restricted to registered users. They can see option to submit, edit or delete their comments.
+
+    <details><summary>Comment section</summary>
+    <img src="static/images/commentsection.jpg" width="500">
+    </details>
+
+  * Edit Comment page
+
+    Edit comment page for registered users only.
+
+    <details><summary>Edit comment</summary>
+    <img src="static/images/editcomment.jpg" width="500">
+    </details>
+
+  * Delete Comment page
+
+    Delete comment page for registered users only.
+
+    <details><summary>Delete comment</summary>
+    <img src="static/images/deletecomment.jpg" width="500">
+    </details>
+
+  * Search Page
+
+    Every site visitor can search for one keyword that can take them to the desired post.
+
+    <details><summary>Search</summary>
+    <img src="static/images/search.jpg" width="500">
+    </details>
+
+  * Register Page
+
+    This page can be opened via the register button in the navigation bar.
+    New site visitors are simply asked to enter username, email address, password and password confirmation to register for the use of this site. 
+    Once successfully registered, users will be redirected to the home page and have access to comments section below posts.
+
+    <details><summary>Register page</summary>
+    <img src="static/images/register.jpg" width="500">
+    </details>
+
+  * Login Page
+
+    Registered and returning users can use the login button to open the login page and supply their username and password to login.
+    On successful login, users will be redirected to the home page and they will be aware of it due to login username displayed in the upper right navbar area.
+
+    <details><summary>Login page</summary>
+    <img src="static/images/login.jpg" width="500">
+    </details>
+
+    <details><summary>This displays when user is logged in</summary>
+    <img src="static/images/logged.jpg" width="500">
+    </details>
+
+  * Contact Page
+
+    Any site visitor can use contact page to reach out to the site owner.
+    There are three fields that user needs to fill in: name, email and message.
+    After submitting the message user will get a notification of being successful.
+
+    <details><summary>Contact page</summary>
+    <img src="static/images/contact.jpg" width="500">
+    </details>
+
+  * Logout page
+
+    Logout notification is very simple and it displays a message that user is logged out successfully.
+
+    <details><summary>Logout page</summary>
+    <img src="static/images/logout.jpg" width="500">
+    </details>
+
+### Features Left to Implement
+
+  Due to the short space of time given to complete this project, I was unable to implement following planned features:
+
+  * Like/Unlike comments
+  * Email authentication
+  * User-created recipe reviews/posts
