@@ -18,7 +18,7 @@
                 <a href="{% url 'post_detail' post.category.slug post.slug %}">
                   <h2 class="subtitle is-4">{{ post.created_at|date:'d-m-Y H:i' }}</h2>
                   <h1 class="title">{{ post.title }}</h1>
-                  <p>{{ post.intro }}</p> {% if post.image %} <figure class="image" alt="post image">
+                  <p>{{ post.intro }}</p> {% if post.image %} <figure class="image">
                     <!-- Image displayed here -->
                     <img alt="post image" src="{{ post.image.url }}">
                   </figure> {% endif %}
@@ -34,8 +34,7 @@
       </div>
       <!-- Back button which returns user one page -->
       <div id="back-button" class="back-button">
-        <button class="button is-rounded">
-          <a id="back" href="{% url 'frontpage' %}">BACK</a>
+          <a class="button is-rounded" id="back" href="{% url 'frontpage' %}">BACK</a>
       </div>
     </div>
   </section>

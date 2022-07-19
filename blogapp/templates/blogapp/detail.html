@@ -17,7 +17,7 @@
               <h1 class="title">{{ post.title }}</h1>
               <p>
                 <strong>{{ post.intro }}</strong>
-              </p> {% if post.image %} <figure class="image" alt="post image">
+              </p> {% if post.image %} <figure class="image">
                 <!-- Image displayed via this url. -->
                 <img alt="post image" src="{{ post.image.url }}">
               </figure> {% endif %}
@@ -41,10 +41,10 @@
                   <br>
                   <div>{{ comment.body }}</div>
                   <br>
-                  <!-- If user is logged in, user can edit or delete comments via buttons below. --> {% if user.username == comment.name %} <button class="button is-secondary">
-                    <a id="editbutton" href="{% url 'editComment' comment.id %}">Edit</a>
-                    <button class="button is-danger">
-                      <a id="deletebutton" href="{% url 'deleteComment' comment.id %}">Delete</a> {% endif %}
+                  <!-- If user is logged in, user can edit or delete comments via buttons below. --> 
+                    {% if user.username == comment.name %}
+                    <a class="button is-secondary" id="editbutton" href="{% url 'editComment' comment.id %}">Edit</a>
+                      <a class="button is-danger" id="deletebutton" href="{% url 'deleteComment' comment.id %}">Delete</a> {% endif %}
                 </div>
               </article> {% endfor %} {% else %}
               <!-- Message displayed for users who are not registered or logged in. -->
@@ -58,8 +58,7 @@
     </div>
     <!-- Back button which returns user one page -->
     <div id="back-button" class="back-button">
-      <button class="button is-rounded">
-        <a id="back" href="{% url 'category_detail' post.category.slug %}">BACK</a>
+        <a class="button is-rounded" id="back" href="{% url 'category_detail' post.category.slug %}">BACK</a>
     </div>
   </div>
 </section>

@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog for all foodies" />
+    <meta name="author" content="Jurica Puljiz" />
     <title>{% block title %}{% endblock %}Daily Foodie</title>
     <!-- Bulma -->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css">
@@ -50,12 +52,9 @@
                   <b>{{user.username}}</b>
                 </span>
                 <li class="nav-item">
-                  <button class="button is-warning is-outlined is-small">
-                    <a id="loginlink" class="nav-link" href="{% url 'log_user_out' %}">Logout</a>
+                  <a class="button is-warning is-outlined is-small" id="loginlink" class="nav-link" href="{% url 'log_user_out' %}">Logout</a>
                 </li> {% else %} <li class="nav-item">
-                  <button class="button is-warning is-outlined is-small">
-                    <a id="loginlink" class="nav-link" href="/login">Login</a>
-                  </button>
+                  <a class="button is-warning is-outlined is-small"id="loginlink" class="nav-link" href="/login">Login</a>
                 </li> {% endif %}
               </ul>
             </div>

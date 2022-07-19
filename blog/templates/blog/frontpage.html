@@ -11,12 +11,8 @@
         <h2 id="blogtitle" class="mb-4 is-size-1 is-size-3-mobile has-text-weight-bold">Daily Foodie</h2>
         <p class="has-text-weight-bold subtitle has-text-grey mb-5">Welcome to my food blog! <br> Enjoy reading some foodie stories or just trying out new recipes. </p>
         <div class="buttons is-centered">
-          <button class="categorybuttons button is-yellow is-rounded">
-            <a href="/blogapp/recipes/" class="category">Recipes</a>
-          </button>
-          <button class="categorybuttons button is-yellow is-rounded">
-            <a href="/blogapp/FoodAroundtheWorld/" class="category">Food Around the World</a>
-          </button>
+            <a class="button categorybuttons category button is-yellow is-rounded" href="/blogapp/recipes/">Recipes</a>
+          <a class="button categorybuttons category button is-yellow is-rounded" href="/blogapp/FoodAroundtheWorld/">Food Around the World</a>
         </div>
       </div>
     </div>
@@ -32,7 +28,7 @@
                 <a href="{% url 'post_detail' post.category.slug post.slug %}">
                   <h2 class="subtitle is-4">{{ post.created_at|date:'d-m-Y H:i' }}</h2>
                   <h1 class="title">{{ post.title }}</h1>
-                  <p>{{ post.intro }}</p> {% if post.image %} <figure class="image" alt="post image">
+                  <p>{{ post.intro }}</p> {% if post.image %} <figure class="image">
                     <!-- Image is displayed via this url -->
                     <img alt="post image" class="img-fluid" src="{{ post.image.url }}">
                   </figure> {% endif %}
