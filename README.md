@@ -265,8 +265,16 @@ Throughout development process of this site, agile development approach was take
 
 The site is tested to ensure all pages are displayed appropriately in all screen sizes.
 
-### Manual and Automated testing
+### Manual testing
 
   Manual testing was conducted to ensure the site works as intended. Testing document can be found here [Link to the testing document](static/documentation/testing.md)
 
+### Errors encountered during development
 
+  1) Minor issues with URLs, which on some occasions, were not working as intended, which were fixed via help and guidance of tutor support.
+  2) Minor issue with comment box responsiveness for smaller screens, which was fixed by making it smaller in terms of rows and columns.
+  3) Deployment was a bit problematic but it was fixed as some lines in settings.py were misplaced.
+  
+### Known error present:
+
+  No known errors present at the time of submission
