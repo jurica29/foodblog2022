@@ -267,6 +267,6 @@ The site is tested to ensure all pages are displayed appropriately in all screen
 
 ### Manual and Automated testing
 
-  Both manual and automated testing were carried out to ensure the site works as intended. Testing document can be found here [Link to the testing document](static/documentation/testing.md)
+  Manual testing was conducted to ensure the site works as intended. Testing document can be found here [Link to the testing document](static/documentation/testing.md)
 
 
