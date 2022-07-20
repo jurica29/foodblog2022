@@ -23,28 +23,19 @@ from blog.views import frontpage, about, robots_txt
 from .sitemaps import CategorySitemap, PostSitemap
 
 
-sitemaps = {'category': CategorySitemap, 'post': PostSitemap}
+sitemaps = {"category": CategorySitemap, "post": PostSitemap}
 
 
 urlpatterns = [
-
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
-
-    path('robots.txt', robots_txt, name='robots_txt'),
-
-    path('admin/', admin.site.urls),
-
-    path('about/', about, name='about'),
-
-    path('registration/', include('registration.urls')),
-
-    path('blogapp/', include('blogapp.urls')),
-
-    path('', include("django.contrib.auth.urls")),
-
-    path('', frontpage, name='frontpage'),
-
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}),
+    path("robots.txt", robots_txt, name="robots_txt"),
+    path("admin/", admin.site.urls),
+    path("about/", about, name="about"),
+    path("registration/", include("registration.urls")),
+    path("blogapp/", include("blogapp.urls")),
+    path("", include("django.contrib.auth.urls")),
+    path("", frontpage, name="frontpage"),
 ]
 
-handler404 = 'dailyfoodie.views.handler404'
-handler500 = 'dailyfoodie.views.handler500'
+handler404 = "dailyfoodie.views.handler404"
+handler500 = "dailyfoodie.views.handler500"

@@ -8,18 +8,29 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('blog', '0002_delete_post'),
+        ("blog", "0002_delete_post"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Contact',
+            name="Contact",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('fullname', models.CharField(max_length=100)),
-                ('email', models.EmailField(max_length=254)),
-                ('message', models.TextField(max_length=10)),
-                ('date_created', models.DateField(auto_now_add=True, verbose_name='Created on date')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("fullname", models.CharField(max_length=100)),
+                ("email", models.EmailField(max_length=254)),
+                ("message", models.TextField(max_length=10)),
+                (
+                    "date_created",
+                    models.DateField(auto_now_add=True, verbose_name="Created on date"),
+                ),
             ],
         ),
     ]

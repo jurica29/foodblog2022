@@ -7,29 +7,33 @@ from .models import Post, Category, Comment
 
 class CommentItemInline(admin.TabularInline):
     """Add fields for comments"""
+
     model = Comment
-    raw_id_fields = ['post']
+    raw_id_fields = ["post"]
 
 
 class PostAdmin(admin.ModelAdmin):
     """Add below fields for posts"""
-    search_fields = ['title', 'intro', 'body']
-    list_display = ['title', 'slug', 'category', 'created_at', 'status']
-    list_filter = ['category', 'created_at', 'status']
+
+    search_fields = ["title", "intro", "body"]
+    list_display = ["title", "slug", "category", "created_at", "status"]
+    list_filter = ["category", "created_at", "status"]
     inlines = [CommentItemInline]
-    prepopulated_fields = {'slug': ('title',)}
+    prepopulated_fields = {"slug": ("title",)}
 
 
 class CategoryAdmin(admin.ModelAdmin):
     """Add below fields for categories"""
-    search_fields = ['title']
-    list_display = ['title']
-    prepopulated_fields = {'slug': ('title',)}
+
+    search_fields = ["title"]
+    list_display = ["title"]
+    prepopulated_fields = {"slug": ("title",)}
 
 
 class CommentAdmin(admin.ModelAdmin):
     """Add below fields for comments"""
-    list_display = ['name', 'post', 'created_at']
+
+    list_display = ["name", "post", "created_at"]
 
 
 admin.site.register(Post, PostAdmin)

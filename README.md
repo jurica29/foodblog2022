@@ -277,7 +277,7 @@ The site is tested to ensure all pages are displayed appropriately in all screen
   
 ### Known error present:
 
-  No known errors present at the time of submission
+  No known errors present at the time of submission 
 
 ###  Validating code - Python, HTML, CSS, JS
 
@@ -285,7 +285,11 @@ All the .py files are validated in the PEP8 online validator.
 
 <details><summary>The result screenshot of one of the file</summary> <img src="static/images/pythonvalidation.jpg"></details> 
 
-At the time of project submission, there were no errors detected in the PEP8 validator (this excludes "env.py").
+Prior to using "black" for linting, there were no errors detected in the PEP8 validator (this excludes "env.py").
+
+Finally, I have decided to use "Black" as recommended by my mentor: [Black](https://github.com/psf/black)
+
+This has caused 9 warnings "line too long" showing up.
 
 No errors were returned when passing through the official W3C validator, just several warnings due to django generated elements.
 
@@ -308,6 +312,7 @@ Following additional packages are installed to create this site by using pip3 in
   * dj3-cloudinary-storage
   * django-crispy-forms
   * richtexteditor
+  * black
 
 ## Deployment
 
@@ -374,6 +379,8 @@ Heroku Postgres, then ensure the changes are reflected in the database.
   [Django tutorial by Codemy.com](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&ab_channel=Codemy.com)
 
   [Django tutorial by Net Ninja](https://www.youtube.com/watch?v=n-FTlQ7Djqc&list=PL4cUxeGkcC9ib4HsrXEYpQnTOTZE1x0uc&ab_channel=TheNetNinja) 
+
+  JS code was taken and adapted from: [JS Code from Stackoverflow](https://stackoverflow.com/questions/41137114/im-trying-to-use-hamburger-menu-on-bulma-css-but-it-doesnt-work-what-is-wron)
 
 * Images 
 

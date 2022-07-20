@@ -7,18 +7,22 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blogapp', '0004_category'),
+        ("blogapp", "0004_category"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='category',
-            options={'ordering': ('title',), 'verbose_name_plural': 'Categories'},
+            name="category",
+            options={"ordering": ("title",), "verbose_name_plural": "Categories"},
         ),
         migrations.AddField(
-            model_name='post',
-            name='posts',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='blogapp.category'),
+            model_name="post",
+            name="posts",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="blogapp.category",
+            ),
             preserve_default=False,
         ),
     ]

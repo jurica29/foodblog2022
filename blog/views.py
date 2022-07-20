@@ -1,6 +1,6 @@
 """Provides an inbound HTTP request to a Django web application."""
 from django.http.response import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
 from django import forms
 
@@ -16,32 +16,33 @@ from .models import Contact
 
 class ContactForm(forms.ModelForm):
     """Contact form view"""
+
     class Meta:
         """The inner class of the model class"""
+
         model = Contact
-        exclude = ('date_created', )
+        exclude = ("date_created",)
 
 
 def frontpage(request):
     """Home page view"""
     posts = Post.objects.filter(status=Post.ACTIVE)
-    return render(request, 'blog/frontpage.html', {'posts': posts})
+    return render(request, "blog/frontpage.html", {"posts": posts})
 
 
 def about(request):
-    """Contact page view """
-    if request.method == 'POST':
+    """Contact page view"""
+    if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid:
             form.save()
-            messages.success(
-                request, 'You have successfully submitted your message!')
+            messages.success(request, "You have successfully submitted your message!")
 
     form = ContactForm
 
-    context = {'form': form}
+    context = {"form": form}
 
-    return render(request, 'blog/about.html', context)
+    return render(request, "blog/about.html", context)
 
 
 def robots_txt(request):
