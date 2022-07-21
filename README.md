@@ -277,7 +277,7 @@ The site is tested to ensure all pages are displayed appropriately in all screen
   
 ### Known error present:
 
-  No known errors present at the time of submission 
+  No known errors present at the time of submission. 
 
 ###  Validating code - Python, HTML, CSS, JS
 
@@ -305,7 +305,7 @@ Two warnings were found when passing JS code through the validator, however they
 
 ## Setting up Django environment.
 
-Following additional packages are installed to create this site by using pip3 install
+Following additional packages are installed to create this site by using pip3 install:
   
   * gunicorn
   * psycopg2
@@ -347,7 +347,7 @@ Heroku Postgres, then ensure the changes are reflected in the database.
 
 8. DISABLE_COLLECTSTATIC set to 1 in Config Vars in Heroku as the initial deployment does not contain static files yet.
 
-9. In settings.py configure followings:
+9. In settings.py configure the following:
  
     * Add 'cloudinary_storage', before 'django.contrib.staticfiles', and 'cloudinary' after it.
 
@@ -358,13 +358,13 @@ Heroku Postgres, then ensure the changes are reflected in the database.
 
     * Set ALLOWED_HOSTS array as 'dailyfoodie.herokuapp.com', 'localhost'
 
-10. Create Procfile with the contents 
+10. Create Procfile with the contents: 
 
     web: gunicorn dailyfoodie.wsgi
 
 11. In the deployment tab in Heroku page, connect to GitHub and search for the repository then Connect.
 
-    Click on Deploy Branch
+    Click on "Deploy Branch"
 
 ## Credits
 
@@ -398,4 +398,4 @@ Heroku Postgres, then ensure the changes are reflected in the database.
 I would also like to thank to:
 
 -	My mentor Rahul, for his time, support and guidance throughout our video calls.
--	My wife Maja, for all her support and patience.
+-	My wife Maja, for all her support and patience during this challenging project.
