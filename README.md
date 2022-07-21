@@ -99,7 +99,7 @@ Throughout development process of this site, agile development approach was take
 
 ### SKELETON
   **Wireframe:**
-  The basic mockup for this site was done on Balsamiq Wireframes and can be viewed below
+  The basic mockup for this site was done on Balsamiq Wireframes and can be viewed below:
   
   [Wireframes folder](https://github.com/jurica29/foodblog2022/tree/main/static/images/wireframes)
 
