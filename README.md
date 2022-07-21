@@ -65,7 +65,7 @@ Issue No. | Title | User story | Acceptance criteria | Implemented
 
 **Agile software development**
 
-Throughout development process of this site, agile development approach was taken using Trello Kanban which was transferred to Github due to technical issues (not fully transferred as I've could not save some of the features that I've created with Trello).
+Throughout development process of this site, agile development approach was taken using Trello Kanban which was transferred to Github due to technical issues (not fully transferred as I could not save some of the features that I've created with Trello).
 
 ### SCOPE
 
